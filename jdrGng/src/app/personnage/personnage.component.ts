@@ -4,6 +4,7 @@ import {PartieService} from '../services/partie.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InventaireService} from '../services/inventaire.service';
 import {ScenarioService} from '../services/scenario.service';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-personnage',
@@ -23,10 +24,12 @@ export class PersonnageComponent implements OnInit {
   //Boolean pour afficher/masquer le formulaire de creation de perso
   isCreatingPerso: Boolean = false;
   scenarios;
+  selectedFile: File;
   constructor(private persoService: PersonnageService,
               private inventaireService: InventaireService,
               private scenarioService: ScenarioService,
-              private fb: FormBuilder) {
+              private fb: FormBuilder,
+              private http: HttpClient) {
     this.keys = Object.keys(this.jobEnum).filter(f => !isNaN(Number(f)));
   }
 
@@ -68,7 +71,11 @@ export class PersonnageComponent implements OnInit {
   createPersonnage(): void {
     this.personnageForm.value.inventaire = this.inventaire;
     this.persoService.add(this.personnageForm.value).subscribe(
-      repPerso => this.returnedPerso = repPerso
+      repPerso => this.returnedPerso = repPerso,
+      () => {},
+      () => {
+        this.getPersos();
+      }
     );
   }
   submitForm() {
@@ -77,6 +84,26 @@ export class PersonnageComponent implements OnInit {
 
   showFormPerso(): void {
     this.isCreatingPerso = (this.isCreatingPerso) ? false : true;
+  }
+
+  lancerPartie() {
+    console.log('lool');
+  }
+
+  onFileChanged(event) {
+    const file = event.target.files[0]
+  }
+  onUpload() {
+    // this.http is the injected HttpClient
+    const uploadData = new FormData();
+    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
+    this.http.post('http://localhost:4200/myImages', uploadData, {
+      reportProgress: true,
+      observe: 'events'
+    })
+      .subscribe(event => {
+        console.log(event); // handle event here
+      });
   }
 }
 
