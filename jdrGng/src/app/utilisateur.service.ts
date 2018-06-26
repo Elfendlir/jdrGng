@@ -6,7 +6,9 @@ import {Utilisateur} from "./utilisateur";
 @Injectable({
   providedIn: 'root'
 })
-export class UtilisateurService {
+
+export class UtilisateurService
+{
 
   baseUrl = 'http://localhost:8082/JDR/Utilisateur/';
   constructor(private http: HttpClient) {}
@@ -20,13 +22,10 @@ export class UtilisateurService {
   delete(id: number): Observable<any> {
     return this.http.get(this.baseUrl + ' ' + id);
   }
-
   add(utilisateur: Utilisateur): Observable<any> {
     return this.http.post(this.baseUrl, Utilisateur);
   }
-
   update(utilisateur: Utilisateur): Observable<any> {
     return this.http.put(this.baseUrl, utilisateur);
   }
-
 }
