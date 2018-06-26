@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Inventaire} from "../classes/inventaire";
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,11 @@ export class InventaireService {
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
   }
-  add(inventaire: any): Observable<any> {
+  add(inventaire: Inventaire): Observable<any> {
     return this.http.post(this.baseUrl, inventaire);
   }
 
-  update(inventaire: any): Observable<any> {
+  update(inventaire: Inventaire): Observable<any> {
     return this.http.put(this.baseUrl, inventaire);
   }
 }

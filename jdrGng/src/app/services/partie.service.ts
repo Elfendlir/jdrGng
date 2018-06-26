@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import {Partie} from "../classes/partie";
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,11 @@ export class PartieService {
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
   }
-  add(partie: any): Observable<any> {
+  add(partie: Partie): Observable<any> {
     return this.http.post(this.baseUrl, partie);
   }
 
-  update(partie: any): Observable<any> {
+  update(partie: Partie): Observable<any> {
     return this.http.put(this.baseUrl, partie);
   }
 }

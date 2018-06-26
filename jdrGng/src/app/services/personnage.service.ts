@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
+import {Personnage} from '../classes/personnage';
 
 @Injectable({
   providedIn: 'root'
@@ -19,11 +20,11 @@ export class PersonnageService {
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
   }
-  add(personnage: any): Observable<any> {
+  add(personnage: Personnage): Observable<any> {
     return this.http.post(this.baseUrl, personnage);
   }
 
-  update(personnage: any): Observable<any> {
+  update(personnage: Personnage): Observable<any> {
     return this.http.put(this.baseUrl, personnage);
   }
 }
