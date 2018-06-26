@@ -1,0 +1,39 @@
+<h1>Nouvelle partie</h1>
+<button type="button" class="btn btn-primary" (click)="showFormPerso()">+ Nouveau personnage</button>
+<div *ngIf="isCreatingPerso" id="creerPerso">
+  <form [formGroup]="personnageForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="inputName">Nom</label>
+      <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
+             formControlName="name" placeholder="Enter name">
+    </div>
+    <div class="form-group">
+      <label for="inputImage">Avatar personnage</label>
+      <input type="file" class="form-control-file" id="inputImage"
+             formControlName="image">
+    </div>
+    <div class="form-group">
+      <select class="form-control" formControlName="job">
+        <option *ngFor="let key of keys" [value]="key" [label]="jobEnum[key]"></option>
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Creer</button>
+  </form>
+</div>
+<div *ngIf="persos !== []" id="choisirPerso">
+  <div *ngFor="let p of persos" class="card persoCard" style="width: 9rem;">
+    <img class="card-img-top" src="../../assets/images/default.svg" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{p.name}}</p>
+    </div>
+  </div>
+</div>
+<div *ngIf="scenarios !== []" id="choisirScenario">
+  <div *ngFor="let s of scenarios" class="card scenarioCard" style="width: 9rem;">
+    <img class="card-img-top" src="../../assets/images/default.svg" alt="Card image cap">
+    <div class="card-body">
+      <p class="card-text">{{s.scene}}</p>
+    </div>
+  </div>
+</div>
+<button></button>
