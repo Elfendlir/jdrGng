@@ -7,6 +7,7 @@ import {InventaireService} from '../services/inventaire.service';
 import {ScenarioService} from '../services/scenario.service';
 import {HttpClient, HttpEventType, HttpResponse} from '@angular/common/http';
 import {UploadFileService} from '../services/upload-file.service';
+import * as myGlobals from '../globals';
 
 @Component({
   selector: 'app-personnage',
@@ -15,8 +16,7 @@ import {UploadFileService} from '../services/upload-file.service';
 })
 export class PersonnageComponent implements OnInit {
   // Le chemin des images sur l'API_REST
-  // TODO : On devrait probablement le replacer en constante globale
-  imagesPath = 'http://localhost:8082/JDR/files/';
+  imagesPath;
   /* Les listes de persos & scenarios qui vont etre affichés dans les choix de persos*/
   persos;
   scenarios;
@@ -56,6 +56,7 @@ export class PersonnageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.imagesPath = myGlobals.imagesPath;
     this.getScenario();
     this.getPersos();
     this.personnageForm = this.fb.group({
@@ -132,6 +133,7 @@ export class PersonnageComponent implements OnInit {
       'scenario': this.scenarioSelected,
       'user'    : null
     };
+    console.log(partie);
     this.partieService.add(partie).subscribe(
       repPartie => this.partieCreated = repPartie,
       () => {},

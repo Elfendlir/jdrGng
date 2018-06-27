@@ -6,6 +6,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
+import { ListPartiesComponent } from './list-parties/list-parties.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'}
@@ -14,7 +15,8 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    PersonnageComponent
+    PersonnageComponent,
+    ListPartiesComponent
   ],
   imports: [
     BrowserModule,
