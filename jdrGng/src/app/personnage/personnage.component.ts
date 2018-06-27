@@ -1,10 +1,12 @@
+
 import { Component, OnInit } from '@angular/core';
 import { PersonnageService } from '../services/personnage.service';
 import {PartieService} from '../services/partie.service';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {InventaireService} from '../services/inventaire.service';
 import {ScenarioService} from '../services/scenario.service';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpEventType, HttpResponse} from '@angular/common/http';
+import {UploadFileService} from '../services/upload-file.service';
 
 @Component({
   selector: 'app-personnage',
@@ -12,23 +14,43 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./personnage.component.css']
 })
 export class PersonnageComponent implements OnInit {
-
+  // Le chemin des images sur l'API_REST
+  // TODO : On devrait probablement le replacer en constante globale
+  imagesPath = 'http://localhost:8082/JDR/files/';
+  /* Les listes de persos & scenarios qui vont etre affichés dans les choix de persos*/
   persos;
+  scenarios;
   personnageForm: FormGroup;
-  //L'enum pour les options du select de la vue
+  // L'enum pour les options du select de la vue
+  // TODO : Remplacer par un service allant chercher les enums de l'api
   jobEnum =  JobEnum;
-  //Le keys sert pour le bon formatage de l'objet personnage avec les enums
+  // Le keys sert pour le bon formatage de l'objet personnage avec les enums
   keys;
+  // Pour creer un inventaire null
   inventaire;
   returnedPerso;
-  //Boolean pour afficher/masquer le formulaire de creation de perso
+  // Boolean pour afficher/masquer le formulaire de creation de perso
   isCreatingPerso: Boolean = false;
-  scenarios;
+  // Sert pour l'input de l'image
   selectedFile: File;
+  fileName;
+  progress: { percentage: number } = { percentage: 0 };
+  // Pour avoir un retour utilisateur à la création d'un personnage
+  alert: IAlert;
+  // Les objets utilisés pour la création de partie
+  persoSelected;
+  scenarioSelected;
+  partieCreated;
+  // Sers pour l'affichage CSS de la selection du perso/scenario
+  lastSelectedPerso;
+  lastSelectedScen;
+
   constructor(private persoService: PersonnageService,
               private inventaireService: InventaireService,
               private scenarioService: ScenarioService,
               private fb: FormBuilder,
+              private uploadService: UploadFileService,
+              private partieService: PartieService,
               private http: HttpClient) {
     this.keys = Object.keys(this.jobEnum).filter(f => !isNaN(Number(f)));
   }
@@ -37,13 +59,24 @@ export class PersonnageComponent implements OnInit {
     this.getScenario();
     this.getPersos();
     this.personnageForm = this.fb.group({
-      'image': '',
+      'image': ['',
+          Validators.compose(
+          [Validators.required]
+        )],
       'job': '',
-      'name': '',
+      'name': ['',
+        Validators.compose(
+          [Validators.required]
+        )],
       'inventaire': '',
       'partie': null
     });
   }
+  /**
+   * @Author Payen Guillaume
+   * @Date 27/06/2018
+   * Les Services get pour la liste de persos et scenarios
+   */
   getScenario(): void {
     this.scenarioService.list().subscribe(
       listScen => this.scenarios = listScen,
@@ -53,9 +86,17 @@ export class PersonnageComponent implements OnInit {
   getPersos(): void {
     this.persoService.list().subscribe(
       listPersos => this.persos = listPersos,
-      () => function () {}
+      () => function () {},
+      () => {
+      }
     );
   }
+
+  /**
+   * @Author Payen Guillaume
+   * @Date 27/06/2018
+   * Les services de création
+   */
   createInventaireAndPerso(): void {
     this.inventaire = {};
     this.inventaireService.add({}).subscribe(
@@ -70,40 +111,133 @@ export class PersonnageComponent implements OnInit {
   }
   createPersonnage(): void {
     this.personnageForm.value.inventaire = this.inventaire;
+    this.personnageForm.value.image = this.fileName;
     this.persoService.add(this.personnageForm.value).subscribe(
       repPerso => this.returnedPerso = repPerso,
       () => {},
       () => {
         this.getPersos();
+        this.onUpload();
+        this.alert = {
+          id: 1,
+          type: 'success',
+          message: 'Le personnage a bien été créé !',
+        };
       }
     );
   }
-  submitForm() {
-    this.createInventaireAndPerso();
+  createPartie() {
+    const partie = {
+      'perso'   : this.persoSelected,
+      'scenario': this.scenarioSelected,
+      'user'    : null
+    };
+    this.partieService.add(partie).subscribe(
+      repPartie => this.partieCreated = repPartie,
+      () => {},
+      () => {
+        console.log(this.partieCreated);
+      }
+    );
   }
 
+  /**
+   * @Author Payen Guillaume
+   * @Date 27/06/2018
+   * La fonction submit du formulaire
+   */
+  submitForm() {
+    if (this.personnageForm.valid) {
+      this.createInventaireAndPerso();
+    } else {
+      this.alert = {
+        id: 1,
+        type: 'error',
+        message: 'Remplisser correctement le formulaire !',
+      };
+    }
+  }
+
+  /**
+   *
+   * @Author Payen Guillaume
+   * @Date 27/06/2018
+   * Selection du perso et scenario pour création de partie
+   */
+  selectPerso(event, perso) {
+    if (!event.currentTarget.classList.contains('cardIsSelected'))
+    {
+      event.currentTarget.classList.add('cardIsSelected');
+      this.persoSelected = perso;
+      if (this.lastSelectedPerso !== undefined && this.lastSelectedPerso !== event.currentTarget)
+      {
+        this.lastSelectedPerso.classList.remove('cardIsSelected');
+      }
+      this.lastSelectedPerso = event.currentTarget;
+    } else {
+      event.currentTarget.classList.remove('cardIsSelected');
+      this.persoSelected = undefined;
+    }
+  }
+  selectScenario(event, scen) {
+    if (!event.currentTarget.classList.contains('cardIsSelected'))
+    {
+      event.currentTarget.classList.add('cardIsSelected');
+      this.scenarioSelected = scen;
+      if (this.lastSelectedScen !== undefined && this.lastSelectedScen !== event.currentTarget) {
+        this.lastSelectedScen.classList.remove('cardIsSelected');
+      }
+      this.lastSelectedScen = event.currentTarget;
+    } else {
+      event.currentTarget.classList.remove('cardIsSelected');
+      this.scenarioSelected = undefined;
+    }
+  }
   showFormPerso(): void {
     this.isCreatingPerso = (this.isCreatingPerso) ? false : true;
   }
-
-  lancerPartie() {
-    console.log('lool');
+  public closeAlert(alert: IAlert) {
+    this.alert = undefined;
   }
 
+  /**
+   * @Author Payen Guillaume
+   * @Date 27/06/2018
+   * Gestion de l'upload des images
+   * TODO : Afficher une progress barre de l'upload
+   * Source : http://javasampleapproach.com/java-integration/angular-5-upload-get-images-to-from-spring-boot-server#12_Create_Storage_Service_for_File_Systems
+   */
   onFileChanged(event) {
-    const file = event.target.files[0]
+    this.selectedFile = event.target.files[0];
+    this.fileName     = event.target.files[0].name;
   }
   onUpload() {
-    // this.http is the injected HttpClient
-    const uploadData = new FormData();
-    uploadData.append('myFile', this.selectedFile, this.selectedFile.name);
-    this.http.post('http://localhost:4200/myImages', uploadData, {
-      reportProgress: true,
-      observe: 'events'
-    })
-      .subscribe(event => {
-        console.log(event); // handle event here
-      });
+    this.progress.percentage = 0;
+    this.uploadService.pushFileToStorage(this.selectedFile).subscribe(event => {
+      if (event.type === HttpEventType.UploadProgress) {
+        this.progress.percentage = Math.round(100 * event.loaded / event.total);
+      } else if (event instanceof HttpResponse) {
+        console.log('File is completely uploaded!');
+      }
+    });
+    this.selectedFile = undefined;
+  }
+
+  /**
+   * @Author Payen Guillaume
+   * @Date 27/06/2018
+   * Lancement de la partie
+   */
+  lancerPartie() {
+    console.log(this.persoSelected);
+    console.log(this.scenarioSelected);
+    if (this.scenarioSelected === undefined || this.persoSelected === undefined)
+    {
+      alert('Veuillez selectinner un personnage et un scenario !');
+    } else {
+      this.createPartie();
+      // TODO : envoyer la partie créée à l'interface de jeu
+    }
   }
 }
 
@@ -112,4 +246,10 @@ export enum JobEnum {
   Guerrier = 1,
   Voleur   = 2,
   Paladin  = 3
+}
+
+export interface IAlert {
+  id: number;
+  type: string;
+  message: string;
 }
