@@ -1,39 +1,58 @@
 <h1>Nouvelle partie</h1>
+<ngb-alert *ngIf="alert" [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
 <button type="button" class="btn btn-primary" (click)="showFormPerso()">+ Nouveau personnage</button>
-<div *ngIf="isCreatingPerso" id="creerPerso">
+<div *ngIf="isCreatingPerso" id="creerPerso" class="containerPerso">
+  <h3>Nouveau personnage</h3>
   <form [formGroup]="personnageForm" (ngSubmit)="submitForm()">
     <div class="form-group">
       <label for="inputName">Nom</label>
       <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
              formControlName="name" placeholder="Enter name">
+      <div *ngIf="personnageForm.controls['name'].invalid && (personnageForm.controls['name'].dirty || personnageForm.controls['name'].touched)"
+           class="alert alert-danger">
+
+        <div >
+          Enter valid name.
+        </div>
+      </div>
     </div>
     <div class="form-group">
       <label for="inputImage">Avatar personnage</label>
-      <input type="file" class="form-control-file" id="inputImage"
+      <input type="file" (change)="onFileChanged($event)" class="form-control-file" id="inputImage"
              formControlName="image">
     </div>
     <div class="form-group">
       <select class="form-control" formControlName="job">
         <option *ngFor="let key of keys" [value]="key" [label]="jobEnum[key]"></option>
       </select>
+      <div *ngIf="personnageForm.controls['job'].invalid && (personnageForm.controls['job'].dirty || personnageForm.controls['job'].touched)"
+           class="alert alert-danger">
+
+        <div >
+          Select a job.
+        </div>
+      </div>
     </div>
     <button type="submit" class="btn btn-primary">Creer</button>
   </form>
 </div>
-<div *ngIf="persos !== []" id="choisirPerso">
-  <div *ngFor="let p of persos" class="card persoCard" style="width: 9rem;">
-    <img class="card-img-top" src="../../assets/images/default.svg" alt="Card image cap">
+<h3>Choisir personnage</h3>
+<div *ngIf="persos !== []" id="choisirPerso" class="containerPerso">
+  <div *ngFor="let p of persos" (click)="selectPerso($event, p)" class="card persoCard" style="width: 9rem;">
+    <img *ngIf="p.image !== ''" class="card-img-top" src="{{this.imagesPath + p.image}}" alt="Card image cap">
+    <img *ngIf="p.image === ''" class="card-img-top" src="../../assets/images/default.svg" alt="Card image cap">
     <div class="card-body">
       <p class="card-text">{{p.name}}</p>
     </div>
   </div>
 </div>
-<div *ngIf="scenarios !== []" id="choisirScenario">
-  <div *ngFor="let s of scenarios" class="card scenarioCard" style="width: 9rem;">
+<h3>Choisir scenario</h3>
+<div *ngIf="scenarios !== []" id="choisirScenario" class="containerPerso">
+  <div *ngFor="let s of scenarios" (click)="selectScenario($event, s)" class="card scenarioCard" style="width: 9rem;">
     <img class="card-img-top" src="../../assets/images/default.svg" alt="Card image cap">
     <div class="card-body">
-      <p class="card-text">{{s.scene}}</p>
+      <p class="card-text">{{s.titre}}</p>
     </div>
   </div>
 </div>
-<button></button>
+<button type="button" class="btn btn-primary" (click)="lancerPartie()">Lancer partie</button>

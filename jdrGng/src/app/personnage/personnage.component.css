@@ -1,7 +1,37 @@
 .persoCard {
   float: left;
+  margin: 5px;
 }
 
 .scenarioCard {
   float: left;
+  margin: 5px;
+}
+.scenarioCard:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+  box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+
+}
+.persoCard:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+  -moz-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+  box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+
+}
+.cardIsSelected {
+  -webkit-box-shadow: 0px 0px 0px 5px rgba(20,181,6,1);
+  -moz-box-shadow: 0px 0px 0px 5px rgba(20,181,6,1);
+  box-shadow: 0px 0px 0px 5px rgba(20,181,6,1);
+}
+.containerPerso {
+  width: calc(100% - 20px);
+  margin: 10px 10px 0px 10px;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(214,214,214,1);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgba(214,214,214,1);
+  box-shadow: inset 0px 0px 10px 0px rgba(214,214,214,1);
+  -webkit-border-radius: 5px 5px 5px 5px;
+  display: inline-block;
+  padding: 5px;
+  background-color: #fafafa;
 }

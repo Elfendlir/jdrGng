@@ -17,13 +17,7 @@ import { IconeProfilComponent } from './icone-profil/icone-profil.component';
 import { IconeOptionsComponent } from './icone-options/icone-options.component';
 import { IconeQuitterComponent } from './icone-quitter/icone-quitter.component';
 import { PersonnageComponent } from './personnage/personnage.component';
-import {PersonnageService} from "./services/personnage.service";
-import {PartieService} from "./services/partie.service";
-import {InventaireService} from "./services/inventaire.service";
-import {ScenarioService} from "./services/scenario.service";
-import {ItemService} from "./services/item.service";
-import {RouteService} from "./services/route.service";
-import {UtilisateurService} from "./services/utilisateur.service";
+import { ListPartiesComponent } from './list-parties/list-parties.component';
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'}
@@ -32,6 +26,7 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    ListPartiesComponent
     PersonnageComponent,
     InterfaceJdrComponent,
     ZoneTexteComponent,
