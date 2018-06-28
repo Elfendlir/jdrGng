@@ -1,6 +1,6 @@
 import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RouteService} from '../route.service';
+import {RouteService} from "../services/route.service";
 
 @Component({
   selector: 'app-route',

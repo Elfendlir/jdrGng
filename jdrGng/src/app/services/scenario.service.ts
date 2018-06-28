@@ -24,7 +24,6 @@ export class ScenarioService {
   add(scenario: Scenario): Observable<any> {
     return this.http.post(this.baseUrl, scenario);
   }
-
   update(scenario: Scenario): Observable<any> {
     return this.http.put(this.baseUrl, scenario);
   }

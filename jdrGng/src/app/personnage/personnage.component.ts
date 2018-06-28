@@ -1,4 +1,3 @@
-
 import { Component, OnInit } from '@angular/core';
 import { PersonnageService } from '../services/personnage.service';
 import {PartieService} from '../services/partie.service';
@@ -129,6 +128,7 @@ export class PersonnageComponent implements OnInit {
   }
   createPartie() {
     const partie = {
+      'id': 0,
       'perso'   : this.persoSelected,
       'scenario': this.scenarioSelected,
       'user'    : null
