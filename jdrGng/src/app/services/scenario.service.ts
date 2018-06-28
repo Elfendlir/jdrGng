@@ -1,23 +1,25 @@
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
-import {Scenario} from './scenario';
+import {Observable} from 'rxjs';
+import {Scenario} from "../classes/scenario";
 
-@Injectable()
-
+@Injectable({
+  providedIn: 'root'
+})
 export class ScenarioService {
 
-  baseUrl = 'http://localhost:8082/JDR/scenarios/';
-  constructor(private http: HttpClient) {}
+  baseUrl: string = 'http://localhost:8082/JDR/scenarios/';
+
+  constructor(private http: HttpClient) { }
 
   list(): Observable<any> {
     return this.http.get(this.baseUrl);
   }
   getOne(id: number): Observable<any> {
-    return this.http.get(this.baseUrl + ' ' + id);
+    return this.http.get(this.baseUrl + '' + id);
   }
   delete(id: number): Observable<any> {
-    return this.http.get(this.baseUrl + ' ' + id);
+    return this.http.delete(this.baseUrl + '' + id);
   }
   add(scenario: Scenario): Observable<any> {
     return this.http.post(this.baseUrl, scenario);

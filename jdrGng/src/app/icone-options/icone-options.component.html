@@ -1,0 +1,39 @@
+<button class="btn btn-outline-secondary mb-2 mr-2" (click)="openModal(content)">Options</button>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Options</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="card bg-light mb-3" style="width: 18rem;">
+          <div class="card-body">
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="check1">
+                <label class="form-check-label" for="check1">Option 1</label>
+                <br/>
+                <input type="checkbox" class="form-check-input" id="check2">
+                <label class="form-check-label" for="check2">Option 2</label>
+                <br/>
+                <input type="checkbox" class="form-check-input" id="check3">
+                <label class="form-check-label" for="check3">Option 3</label>
+              </div>
+              <button type="submit" class="btn btn-secondary">Valider</button>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="card" style="width: 10rem;">
+          <img class="card-img-top" src="../assets/images/iconeOptions.png" alt="Card image cap">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

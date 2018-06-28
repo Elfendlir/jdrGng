@@ -10,12 +10,29 @@ import { ScenarioComponent } from './scenario/scenario.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
-import { AlertModule } from 'ngx-bootstrap';
 import { ProfilComponent } from './profil/profil.component';
 import { RouteComponent } from './route/route.component';
 import { RouteListComponent } from './route-list/route-list.component';
-import {RouteService} from './route.service';
-import {UtilisateurService} from './utilisateur.service';
+import { InterfaceJdrComponent } from './interface-jdr/interface-jdr.component';
+import { ZoneTexteComponent } from './zone-texte/zone-texte.component';
+import { BarreMenuComponent } from './barre-menu/barre-menu.component';
+import { ZoneImageComponent } from './zone-image/zone-image.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { LanceDesComponent } from './lance-des/lance-des.component';
+import { IconePersonnageComponent } from './icone-personnage/icone-personnage.component';
+import { IconeInventaireComponent } from './icone-inventaire/icone-inventaire.component';
+import { IconeProfilComponent } from './icone-profil/icone-profil.component';
+import { IconeOptionsComponent } from './icone-options/icone-options.component';
+import { IconeQuitterComponent } from './icone-quitter/icone-quitter.component';
+import { PersonnageComponent } from './personnage/personnage.component';
+import { ListPartiesComponent } from './list-parties/list-parties.component';
+import {PersonnageService} from "./services/personnage.service";
+import {ItemService} from "./services/item.service";
+import {InventaireService} from "./services/inventaire.service";
+import {PartieService} from "./services/partie.service";
+import {ScenarioService} from "./services/scenario.service";
+import {RouteService} from "./services/route.service";
+import {UtilisateurService} from "./services/utilisateur.service";
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -25,6 +42,19 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
+    ListPartiesComponent,
+    PersonnageComponent,
+    InterfaceJdrComponent,
+    ZoneTexteComponent,
+    BarreMenuComponent,
+    ZoneImageComponent,
+    SidebarComponent,
+    LanceDesComponent,
+    IconeInventaireComponent,
+    IconeProfilComponent,
+    IconeQuitterComponent,
+    IconeOptionsComponent,
+    IconePersonnageComponent,
     ConnexionComponent,
     ScenarioComponent,
     HeaderComponent,
@@ -35,15 +65,21 @@ const routes: Routes = [
     RouteListComponent
   ],
   imports: [
-    AlertModule.forRoot(),
     BrowserModule,
     HttpClientModule,
-    ReactiveFormsModule,
     RouterModule.forRoot(routes),
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    ReactiveFormsModule
   ],
-  providers: [RouteService, UtilisateurService],
-
+  providers: [
+    PersonnageService,
+    PartieService,
+    InventaireService,
+    ScenarioService,
+    ItemService,
+    RouteService,
+    UtilisateurService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
