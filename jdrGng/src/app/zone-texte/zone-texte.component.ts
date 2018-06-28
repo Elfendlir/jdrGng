@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ScenarioService} from "../services/scenario.service";
+import {RouteService} from "../services/route.service";
 
 @Component({
   selector: 'app-zone-texte',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ZoneTexteComponent implements OnInit {
 
-  constructor() { }
+  scenario;
+  route;
+
+  constructor(private scenarioService: ScenarioService, private routeService: RouteService) { }
 
   ngOnInit() {
+    this.scenarioService.getOne(1).subscribe(
+      scenarioSelected => this.scenario = scenarioSelected
+    );
+    this.routeService.getOne(1).subscribe(
+      routeSelected => this.route = routeSelected
+    );
   }
 
 }

@@ -55,7 +55,7 @@ export class PersonnageComponent implements OnInit {
   }
   createInventaireAndPerso(): void {
     this.inventaire = {};
-    this.inventaireService.add({}).subscribe(
+    this.inventaireService.add(this.inventaire).subscribe(
       leInventaire => {
         this.inventaire = leInventaire;
       },

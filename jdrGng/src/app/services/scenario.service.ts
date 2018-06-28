@@ -8,14 +8,15 @@ import {Scenario} from "../classes/scenario";
 })
 export class ScenarioService {
 
-  baseUrl: string = 'http://localhost:8082/JDR/scenarios';
+  baseUrl: string = 'http://localhost:8082/JDR/scenarios/';
+
   constructor(private http: HttpClient) { }
 
   list(): Observable<any> {
     return this.http.get(this.baseUrl);
   }
   getOne(id: number): Observable<any> {
-    return this.http.get(this.baseUrl + '/' + id);
+    return this.http.get(this.baseUrl + '' + id);
   }
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
