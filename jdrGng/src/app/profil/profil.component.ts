@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup} from '@angular/forms';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {UtilisateurService} from '../utilisateur.service';
 
 @Component({
   selector: 'app-profil',
@@ -7,10 +8,29 @@ import {FormGroup} from '@angular/forms';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-   leFormG: FormGroup;
-  constructor() { }
+   userForm: FormGroup;
+   formSubmitted = false;
+
+  constructor(private fb: FormBuilder, private cs: UtilisateurService) { }
 
   ngOnInit() {
+    this.userForm = this.fb.group({
+      'email': [ '' ,
+        Validators.compose([Validators.required])],
+      'mdp': '',
+      'nom': ''
+    });
   }
 
+  submitForm() {
+    this.formSubmitted = true;
+
+    if (this.userForm.valid ) {
+      this.cs.add(this.userForm.value).subscribe(
+        userFromDb => {
+          console.log(userFromDb);
+        }
+      );
+    }
+  }
 }

@@ -1,12 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Utilisateur} from './utilisateur';
+import {HttpClient} from '@angular/common/http';
+import {Route} from './route';
 
 @Injectable()
-export class UtilisateurService {
+export class RouteService {
 
-  baseUrl = 'http://localhost:8082/JDR/utilisateur';
+  baseUrl = 'http://localhost:8082/JDR/route/';
   constructor(private http: HttpClient) {}
 
   list(): Observable<any> {
@@ -18,10 +18,10 @@ export class UtilisateurService {
   delete(id: number): Observable<any> {
     return this.http.get(this.baseUrl + ' ' + id);
   }
-  add(utilisateur: Utilisateur): Observable<any> {
-    return this.http.post(this.baseUrl, utilisateur);
+  add(route: Route): Observable<any> {
+    return this.http.post(this.baseUrl, route);
   }
-  update(utilisateur: Utilisateur): Observable<any> {
-    return this.http.put(this.baseUrl, utilisateur);
+  update(route: Route): Observable<any> {
+    return this.http.put(this.baseUrl, route);
   }
 }

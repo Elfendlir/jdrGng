@@ -12,6 +12,15 @@ import { NavComponent } from './nav/nav.component';
 import { FooterComponent } from './footer/footer.component';
 import { AlertModule } from 'ngx-bootstrap';
 import { ProfilComponent } from './profil/profil.component';
+import { RouteComponent } from './route/route.component';
+import { RouteListComponent } from './route-list/route-list.component';
+import {RouteService} from './route.service';
+import {UtilisateurService} from './utilisateur.service';
+
+const routes: Routes = [
+  {path: 'routelist', component : RouteListComponent},
+  {path: 'routeadd', component : RouteComponent}
+]
 
 @NgModule({
   declarations: [
@@ -21,16 +30,19 @@ import { ProfilComponent } from './profil/profil.component';
     HeaderComponent,
     NavComponent,
     FooterComponent,
-    ProfilComponent
+    ProfilComponent,
+    RouteComponent,
+    RouteListComponent
   ],
   imports: [
     AlertModule.forRoot(),
     BrowserModule,
     HttpClientModule,
     ReactiveFormsModule,
+    RouterModule.forRoot(routes),
     NgbModule.forRoot()
   ],
-  providers: [],
+  providers: [RouteService, UtilisateurService],
 
   bootstrap: [AppComponent]
 })

@@ -1,0 +1,17 @@
+
+<div *ngIf="!routeForm.valid && formSubmitted">
+  <div class="route">
+    <div *ngIf="routeForm.controls['scene'].hasError('required')">
+    </div>
+  </div>
+</div>
+
+<form [formGroup] = "routeForm" (ngSubmit)="submitForm()">
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">scene :</label>
+    <textarea class="form-control" id="exampleFormControlTextarea1" formControlName="scene" rows="6"></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Save Change</button>
+
+</form>
