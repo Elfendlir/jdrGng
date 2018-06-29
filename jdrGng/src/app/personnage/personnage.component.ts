@@ -242,7 +242,7 @@ export class PersonnageComponent implements OnInit {
     }
   }
 }
-
+// TODO : Changer systeme enum
 export enum JobEnum {
   Mage     = 0,
   Guerrier = 1,
