@@ -1,8 +1,15 @@
+import {Scenario} from "./scenario";
+import {Item} from "./item";
+
 export class Route {
 
   constructor(
-    private id: number,
-    private scene: string,
-    private imageScene: string
+    id: number,
+    scene: string,
+    imageScene: string,
+    routeInitiale: Route,
+    listeRoutesSuivantes: Set<Route>,
+    listeItemsRoute: Set<Item>,
+    scenario: Scenario
   ) {}
 }

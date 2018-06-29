@@ -1,7 +1,12 @@
+import {Route} from "./route";
+import {Partie} from "./partie";
+
 export class Scenario {
 
   constructor(
-    private id: number,
-    private titre: string
+    id: number,
+    titre: string,
+    listeRoutes: Set<Route>,
+    listeParties: Set<Partie>
   ) {}
 }

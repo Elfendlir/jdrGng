@@ -6,8 +6,8 @@ export class Partie {
 
   constructor(
     id: number,
-    scenario: Scenario,
     perso: Personnage,
+    scenario: Scenario,
     user: Utilisateur
   ) {}
 }
