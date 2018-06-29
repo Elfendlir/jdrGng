@@ -1,0 +1,23 @@
+<div *ngIf="!userForm.valid && formSubmitted">
+  <div class="utilisateur">
+    <div *ngIf="userForm.controls['email'].hasError('required')"></div>
+    <div *ngIf="userForm.controls['mdp'].hasError('required')"></div>
+    <div *ngIf="userForm.controls['nom'].hasError('required')"></div>
+  </div>
+</div>
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div class="form-group">
+      <label for="emailInput">Email address</label>
+      <input type="email" class="form-control" id="emailInput" placeholder="name@example.com" formControlName="email">
+    </div>
+  <div class="form-group">
+    <label for="NameInput">Name</label>
+    <input type="text" class="form-control" id="NameInput" placeholder="ieiko" formControlName="nom">
+  </div>
+  <div>
+    <label for="passwordInput">Password</label>
+    <input type="password" class="form-control" id="passwordInput" placeholder=" " formControlName="mdp">
+  </div>
+  <div><button  type="submit" class="btn btn-primary btn-sm" >Save change</button><button  type="reset" class="btn btn-primary btn-sm">reset</button></div>
+
+</form>
