@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Inventaire} from "../classes/inventaire";
+import {Inventaire} from '../classes/inventaire';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class InventaireService {
 
   baseUrl: string = 'http://localhost:8082/JDR/inventaires/';

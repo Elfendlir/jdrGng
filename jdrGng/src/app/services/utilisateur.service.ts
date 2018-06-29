@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Utilisateur} from "../classes/utilisateur";
+import {Utilisateur} from '../classes/utilisateur';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UtilisateurService {
 
   baseUrl: string = 'http://localhost:8082/JDR/utilisateurs/';

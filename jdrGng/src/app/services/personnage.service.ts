@@ -3,9 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Personnage} from '../classes/personnage';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PersonnageService {
 
   baseUrl: string = 'http://localhost:8082/JDR/personnages/';

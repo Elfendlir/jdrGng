@@ -3,9 +3,7 @@ import {HttpClient} from "@angular/common/http";
 import { Observable } from 'rxjs';
 import {Item} from "../classes/item";
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ItemService {
 
   baseUrl: string = 'http://localhost:8082/JDR/items/';

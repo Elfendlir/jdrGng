@@ -26,13 +26,16 @@ import { IconeOptionsComponent } from './icone-options/icone-options.component';
 import { IconeQuitterComponent } from './icone-quitter/icone-quitter.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import { ListPartiesComponent } from './list-parties/list-parties.component';
-import {PersonnageService} from "./services/personnage.service";
-import {ItemService} from "./services/item.service";
-import {InventaireService} from "./services/inventaire.service";
-import {PartieService} from "./services/partie.service";
-import {ScenarioService} from "./services/scenario.service";
-import {RouteService} from "./services/route.service";
-import {UtilisateurService} from "./services/utilisateur.service";
+import {PersonnageService} from './services/personnage.service';
+import {ItemService} from './services/item.service';
+import {InventaireService} from './services/inventaire.service';
+import {PartieService} from './services/partie.service';
+import {ScenarioService} from './services/scenario.service';
+import {RouteService} from './services/route.service';
+import {UtilisateurService} from './services/utilisateur.service';
+import { ScenarioListComponent } from './scenario-list/scenario-list.component';
+import { RouteItemComponent } from './route-item/route-item.component';
+import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -62,7 +65,10 @@ const routes: Routes = [
     FooterComponent,
     ProfilComponent,
     RouteComponent,
-    RouteListComponent
+    RouteListComponent,
+    ScenarioListComponent,
+    RouteItemComponent,
+    ScenarioItemComponent
   ],
   imports: [
     BrowserModule,
