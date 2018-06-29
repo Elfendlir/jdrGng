@@ -83,7 +83,6 @@ export class ListPersonnageComponent implements OnInit {
    * @Author Payen Guillaume
    * @Date 27/06/2018
    * Gestion de l'upload des images
-   * TODO : Afficher une progress barre de l'upload
    * Source : http://javasampleapproach.com/java-integration/angular-5-upload-get-images-to-from-spring-boot-server#12_Create_Storage_Service_for_File_Systems
    */
   onFileChanged(event) {
