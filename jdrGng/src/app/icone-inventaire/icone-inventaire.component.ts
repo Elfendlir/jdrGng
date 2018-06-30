@@ -1,5 +1,6 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {Partie} from "../classes/partie";
 
 @Component({
   selector: 'app-icone-inventaire',
@@ -9,6 +10,8 @@ import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 })
 
 export class IconeInventaireComponent implements OnInit {
+
+  @Input() partieEnCours: Partie;
 
   constructor(private modalService: NgbModal) { }
 

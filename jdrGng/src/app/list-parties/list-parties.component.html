@@ -21,7 +21,8 @@
       <td>{{p.perso.name}}</td>
       <td width="50px"><img class="iconeTab" src="../../assets/images/default.svg" /></td>
       <td>{{p.scenario.titre}}</td>
-      <td><button (click)="lancerPartie(p)">Lancer partie</button></td>
+      <!--<td><button (click)="lancerPartie(p)">Lancer partie</button></td>-->
+      <td><button type="button" class="btn btn-secondary" [routerLink]="['/interface-jdr', p.id]">Jouer</button></td>
     </tr>
   </tbody>
 </table>

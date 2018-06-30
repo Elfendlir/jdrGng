@@ -4,8 +4,8 @@ import {Personnage} from "./personnage";
 export class Inventaire {
 
   constructor(
-    id: number,
-    listeItemsInventaire: Set<Item>,
-    personnage: Personnage
+    private id: number,
+    private listeItemsInventaire: Set<Item>,
+    private personnage: Personnage
   ) {}
 }

@@ -37,7 +37,7 @@ import {UtilisateurService} from "./services/utilisateur.service";
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
   {path: 'routeadd', component : RouteComponent},
-  {path: 'interface-jdr', component : InterfaceJdrComponent}
+  {path: 'interface-jdr/:id', component : InterfaceJdrComponent}
 ]
 
 @NgModule({

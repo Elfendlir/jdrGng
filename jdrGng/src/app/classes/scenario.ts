@@ -4,9 +4,9 @@ import {Partie} from "./partie";
 export class Scenario {
 
   constructor(
-    id: number,
-    titre: string,
-    listeRoutes: Set<Route>,
-    listeParties: Set<Partie>
+    private id: number,
+    private titre: string,
+    private listeRoutes: Set<Route>,
+    private listeParties: Set<Partie>
   ) {}
 }

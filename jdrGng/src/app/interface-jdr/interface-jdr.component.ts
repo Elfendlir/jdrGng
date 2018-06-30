@@ -1,5 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Partie} from "../classes/partie";
+import {Component, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {PartieService} from "../services/partie.service";
 
 @Component({
   selector: 'app-interface-jdr',
@@ -8,10 +9,18 @@ import {Partie} from "../classes/partie";
 })
 export class InterfaceJdrComponent implements OnInit {
 
-  //@Input() partieEnCours: Partie;
+  idPartieEnCours;
+  partieEnCours;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private partieService: PartieService) { }
 
   ngOnInit() {
+    this.route.params.subscribe(
+      params => {
+        this.idPartieEnCours = params['id'];
+      });
+    this.partieService.getOne(this.idPartieEnCours).subscribe(
+      partieSelected => this.partieEnCours = partieSelected
+    );
   }
 }

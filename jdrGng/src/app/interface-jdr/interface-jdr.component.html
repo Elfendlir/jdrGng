@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <p></p>
+     <p></p>
     </div>
     <div class="col-sm-2">
       <app-sidebar></app-sidebar>
@@ -10,13 +10,13 @@
       <app-zone-image></app-zone-image>
     </div>
     <div class="col-sm-3">
-      <app-zone-texte></app-zone-texte>
+      <app-zone-texte [partieEnCours]="partieEnCours"></app-zone-texte>
     </div>
     <div class="col-sm-12">
       <p></p>
     </div>
     <div class="col-sm-12">
-      <app-barre-menu></app-barre-menu>
+      <app-barre-menu [partieEnCours]="partieEnCours"></app-barre-menu>
     </div>
   </div>
 </div>
