@@ -1,37 +1,136 @@
 .persoCard {
   float: left;
   margin: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  width: 150px;
+  background-color: unset;
+  border-radius: unset;
 }
-
+.cadrePerso {
+  position: absolute;
+  /*top: -10px;*/
+  /*left: -10px;*/
+  transform: scale(1.2);
+}
+.persoAvatar {
+  max-height: 142px;
+}
+.persoDescription {
+  background-color: #6c582d;
+  color: white;
+}
 .scenarioCard {
   float: left;
   margin: 5px;
+  background-color: unset;
+  border-radius: unset;
 }
-.scenarioCard:hover {
-  -webkit-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
-  -moz-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
-  box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
 
+.scenarioCard:hover {
+  -webkit-box-shadow: 0px 0px 10px 5px rgb(255, 228, 181);
+  -moz-box-shadow: 0px 0px 10px 5px rgb(255, 228, 181);
+  box-shadow: 0px 0px 10px 5px rgb(255, 228, 181);
+  transform: scale(2);
+  z-index: 1000;
 }
 .persoCard:hover {
-  -webkit-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
-  -moz-box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
-  box-shadow: 0px 0px 10px 5px rgba(20,181,6,1);
+  -webkit-box-shadow: 0px 0px 10px 5px rgb(255, 228, 181);
+  -moz-box-shadow: 0px 0px 10px 5px rgb(255, 228, 181);
+  box-shadow: 0px 0px 10px 5px rgb(255, 228, 181);
+  transform: scale(1.5);
+  z-index: 1000;
 
 }
 .cardIsSelected {
-  -webkit-box-shadow: 0px 0px 0px 5px rgba(20,181,6,1);
-  -moz-box-shadow: 0px 0px 0px 5px rgba(20,181,6,1);
-  box-shadow: 0px 0px 0px 5px rgba(20,181,6,1);
+  -webkit-box-shadow:0px 0px 0px 9px #ffe4b5 ;
+  -moz-box-shadow:0px 0px 0px 9px #ffe4b5 ;
+  box-shadow:0px 0px 0px 9px #ffe4b5 ;
 }
 .containerPerso {
-  width: calc(100% - 20px);
-  margin: 10px 10px 0px 10px;
-  -webkit-box-shadow: inset 0px 0px 10px 0px rgba(214,214,214,1);
-  -moz-box-shadow: inset 0px 0px 10px 0px rgba(214,214,214,1);
-  box-shadow: inset 0px 0px 10px 0px rgba(214,214,214,1);
-  -webkit-border-radius: 5px 5px 5px 5px;
+  width: 100%;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
   display: inline-block;
   padding: 5px;
   background-color: #fafafa;
+  border-width:10px 10px 10px 10px;
+  border-style:outset outset outset outset;
+  border-color:#6c582d #6c582d #6c582d #6c582d;
+  background-color: #A8946A;
+  color: white;
+}
+
+.buttonAdd {
+  width: 23px;
+}
+.buttonTheme:hover {
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(216,194,54,1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(216,194,54,1);
+  box-shadow: 0px 0px 5px 2px rgba(216,194,54,1);
+  cursor: pointer;
+}
+.buttonAddRight {
+  background-color: #A8946A;
+  max-width: 200px;
+  color: white;
+  display: flex;
+  padding: 5px;
+}
+.buttonAddRight span{
+  margin: auto; /* eh oui, tout bêtement */
+}
+
+.buttonTheme {
+  display: inline-flex;
+}
+.buttonThemeLaunch {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+.buttonAddLauch {
+  width: 100px;
+  z-index: 999;
+}
+.buttonAddRightLauch {
+  background-color: #A8946A;
+  max-width: 300px;
+  color: white;
+  display: flex;
+  padding: 5px;
+  padding-left: 55px;
+  padding-right: 10px;
+  margin-left: -50px;
+  margin-top: 10px;
+  font-size: 26pt;
+  max-height: 80px;
+  border-bottom: 10px solid #6c582d;
+}
+.buttonThemeLaunch:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+h1 {
+  background-color: #A8946A;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  color: white;
+}
+h3 {
+  color: white;
+  background-color: #6c582d;
+  margin: 0px;
+  margin-top: 10px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+.container-fluid {
+  background-color: #DFC690;
+}
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+* {
+  font-family: Cinzel;
 }

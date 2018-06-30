@@ -8,7 +8,7 @@ import {Utilisateur} from "../classes/utilisateur";
 })
 export class UtilisateurService {
 
-  baseUrl: string = 'http://localhost:8082/JDR/utilisateurs/';
+  baseUrl: string = 'http://localhost:8082/JDR/utilisateur/';
 
   constructor(private http: HttpClient) { }
 

@@ -33,6 +33,7 @@ import {PartieService} from "./services/partie.service";
 import {ScenarioService} from "./services/scenario.service";
 import {RouteService} from "./services/route.service";
 import {UtilisateurService} from "./services/utilisateur.service";
+import { ListPersonnageComponent } from './list-personnage/list-personnage.component';
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -63,7 +64,8 @@ const routes: Routes = [
     FooterComponent,
     ProfilComponent,
     RouteComponent,
-    RouteListComponent
+    RouteListComponent,
+    ListPersonnageComponent
   ],
   imports: [
     BrowserModule,

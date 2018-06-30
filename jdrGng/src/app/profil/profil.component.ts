@@ -28,6 +28,7 @@ export class ProfilComponent implements OnInit {
     if (this.userForm.valid ) {
       this.cs.add(this.userForm.value).subscribe(
         userFromDb => {
+          console.log('lol --------------');
           console.log(userFromDb);
         }
       );
