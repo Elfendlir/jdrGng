@@ -3,10 +3,10 @@ import {Partie} from "./partie";
 export class Utilisateur {
 
   constructor(
-    private id: number,
-    private nom: string,
-    private email: string,
-    private mdp: string,
-    private listeParties: Set<Partie>
+    public id: number,
+    public nom: string,
+    public email: string,
+    public mdp: string,
+    public listeParties: Set<Partie>
   ) {}
 }

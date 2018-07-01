@@ -5,9 +5,9 @@ import {Utilisateur} from "./utilisateur";
 export class Partie {
 
   constructor(
-    id: number,
-    perso: Personnage,
-    scenario: Scenario,
-    user: Utilisateur
+    public id: number,
+    public perso: Personnage,
+    public scenario: Scenario,
+    public user: Utilisateur
   ) {}
 }

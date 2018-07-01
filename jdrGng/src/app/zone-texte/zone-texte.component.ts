@@ -12,17 +12,24 @@ export class ZoneTexteComponent implements OnInit {
 
   @Input() partieEnCours: Partie;
   route;
-  idCurrentRoute: number = 1;
+  idCurrentRoute: number;
 
   constructor(private scenarioService: ScenarioService, private routeService: RouteService) { }
 
   ngOnInit() {
+    //TODO récupérer la current route au lancement
+    this.idCurrentRoute = 1;
     this.routeService.getOne(this.idCurrentRoute).subscribe(
       routeSelected => this.route = routeSelected
     );
   }
 
   changerDeRoute() {
+    //TODO modifier la current route au click
     this.idCurrentRoute = 2;
+    this.routeService.getOne(this.idCurrentRoute).subscribe(
+      routeSelected => this.route = routeSelected
+    );
+    //window.location.reload();
   }
 }

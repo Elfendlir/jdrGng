@@ -1,10 +1,16 @@
-.container{
-  top:0;
-  left:0;
-  height:100%;
-  width:100%;
-
-  padding-bottom:40px;
-  overflow:hidden;
-  background-color: white;
+.container-fluid {
+  background-color: #DFC690;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+* {
+  font-family: Cinzel;
+}
+h1 {
+  background-color: #A8946A;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  color: white;
+}
+

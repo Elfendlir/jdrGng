@@ -4,12 +4,12 @@ import {Item} from "./item";
 export class Route {
 
   constructor(
-    private id: number,
-    private scene: string,
-    private imageScene: string,
-    private routeInitiale: Route,
-    private listeRoutesSuivantes: Set<Route>,
-    private listeItemsRoute: Set<Item>,
-    private scenario: Scenario
+    public id: number,
+    public scene: string,
+    public imageScene: string,
+    public routeInitiale: Route,
+    public listeRoutesSuivantes: Set<Route>,
+    public listeItemsRoute: Set<Item>,
+    public scenario: Scenario
   ) {}
 }

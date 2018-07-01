@@ -155,7 +155,7 @@ export class PersonnageComponent implements OnInit {
       this.alert = {
         id: 1,
         type: 'error',
-        message: 'Remplisser correctement le formulaire !',
+        message: 'Remplissez correctement le formulaire !',
       };
     }
   }
@@ -235,10 +235,9 @@ export class PersonnageComponent implements OnInit {
     console.log(this.scenarioSelected);
     if (this.scenarioSelected === undefined || this.persoSelected === undefined)
     {
-      alert('Veuillez selectinner un personnage et un scenario !');
+      alert('Veuillez selectionner un personnage et un scenario !');
     } else {
       this.createPartie();
-      // TODO : envoyer la partie créée à l'interface de jeu
     }
   }
 }

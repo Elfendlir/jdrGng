@@ -5,3 +5,7 @@
 .dark-modal .close {
   color: white;
 }
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+* {
+  font-family: Cinzel;
+}

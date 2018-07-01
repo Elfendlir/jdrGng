@@ -24,7 +24,7 @@ export class ListPartiesComponent implements OnInit {
   }
 
   lancerPartie(partie): void {
-    // TODO : Lancer la partie
     alert('Partie ID : ' + partie.id);
   }
+
 }

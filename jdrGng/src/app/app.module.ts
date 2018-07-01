@@ -38,7 +38,11 @@ import { ListPersonnageComponent } from './list-personnage/list-personnage.compo
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
   {path: 'routeadd', component : RouteComponent},
-  {path: 'interface-jdr/:id', component : InterfaceJdrComponent}
+  {path: 'interface-jdr/:id', component : InterfaceJdrComponent},
+  {path: 'list-parties', component : ListPartiesComponent},
+  {path: 'personnage', component : PersonnageComponent},
+  {path: 'connexion', component : ConnexionComponent},
+  {path: 'scenario', component : ScenarioComponent}
 ]
 
 @NgModule({
