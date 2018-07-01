@@ -1,3 +1,14 @@
-<p>
-  route-list works!
-</p>
+<table class="table">
+  <thead class="thead">
+  <tr>
+    <th scope="col">route</th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tr *ngFor="let r of route">
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+    <option>{{r.scene}}</option>
+    </select>
+  </tr>
+</table>
+

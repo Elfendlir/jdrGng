@@ -1,15 +1,14 @@
-<div class="col-8">
-  <ngb-tabset>
-    <ngb-tab title="Liste de Scénario">
-      <ng-template ngbTabContent>
-        liste des Scénario
-      </ng-template>
-    </ngb-tab>
-    <ngb-tab title="Edition de Scénario">
-      <ng-template ngbTabContent>
-        <app-route></app-route>
-      </ng-template>
-    </ngb-tab>
-  </ngb-tabset>
+<app-scenario-list></app-scenario-list>
+<div *ngIf="!userForm.valid && formSubmitted">
+  <div class="utilisateur">
+    <div *ngIf="userForm.controls['titre'].hasError('required')"></div>
+  </div>
 </div>
+<form [formGroup]="userForm" (ngSubmit)="submitForm()">
+  <div class="form-group" >
+    <label for="titreInput">Titre du scénario</label>
+    <input type="text" class="form-control col-4" id="titreInput" formControlName="titre"  >
+  </div>
+<button type="submit" class="btn btn-primary">Editer un scénario</button>
+</form>
 

@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Scenario} from "../classes/scenario";
+import {Scenario} from '../classes/scenario';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class ScenarioService {
 
   baseUrl: string = 'http://localhost:8082/JDR/scenarios/';

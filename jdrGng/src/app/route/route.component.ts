@@ -1,6 +1,6 @@
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
-import {RouteService} from "../services/route.service";
+import {RouteService} from '../services/route.service';
 
 @Component({
   selector: 'app-route',
@@ -12,17 +12,19 @@ export class RouteComponent implements OnInit {
   formSubmitted = false;
 
   constructor(private fb: FormBuilder, private cs: RouteService) { }
-
+  @Input() scenario;
   ngOnInit() {
     this.routeForm = this.fb.group({
       'scene': [ ' ' ,
-        Validators.compose([Validators.required])]
+        Validators.compose([Validators.required])],
+      'scenario': this.scenario
     });
   }
 
   submitForm() {
     this.formSubmitted = true;
-
+      console.log(this.scenario.id);
+    console.log(this.routeForm);
     if (this.routeForm.valid ) {
       this.cs.add(this.routeForm.value).subscribe(
         routeFromDb => {

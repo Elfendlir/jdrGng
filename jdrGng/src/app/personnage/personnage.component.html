@@ -52,7 +52,7 @@
   <div *ngIf="persos !== []" id="choisirPerso" class="containerPerso">
     <div *ngFor="let p of persos" (click)="selectPerso($event, p)" class="card persoCard" style="width: 9rem;">
       <img *ngIf="p.image !== ''" class="card-img-top persoAvatar" src="{{this.imagesPath + p.image}}" alt="Card image cap">
-      <img class="cadrePerso" src="../../assets/themeImages/cadrePerso.svg" />
+      <!--<img class="cadrePerso" src="../../assets/themeImages/cadrePerso.svg" />-->
       <img *ngIf="p.image === ''" class="card-img-top persoAvatar" src="../../assets/images/default.svg" alt="Card image cap">
       <div class="card-body persoDescription">
         <small>Nom :</small>

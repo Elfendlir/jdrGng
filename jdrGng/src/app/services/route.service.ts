@@ -1,14 +1,12 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/index";
-import {Route} from "../classes/route";
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/index';
+import {Route} from '../classes/route';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class RouteService {
 
-  baseUrl: string = 'http://localhost:8082/JDR/routes/';
+  baseUrl: string = 'http://localhost:8082/JDR/route/';
 
   constructor(private http: HttpClient) { }
 
