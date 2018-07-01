@@ -13,8 +13,8 @@
     <th scope="row" width="50px"><img class="iconeTab" src="{{imagesPath + p.image}}" /></th>
     <td>{{p.name}}</td>
     <td>{{p.job}}</td>
-    <td><button (click)="open(content, p)">Edit</button></td>
-    <td><button (click)="deletePerso(p)">Supprimer</button></td>
+    <td><button class="btn btn-secondary" (click)="open(content, p)">Editer</button></td>
+    <td><button class="btn btn-secondary" (click)="deletePerso(p)">Supprimer</button></td>
   </tr>
   </tbody>
 </table>

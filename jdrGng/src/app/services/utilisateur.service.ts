@@ -6,7 +6,7 @@ import {Utilisateur} from '../classes/utilisateur';
 @Injectable()
 export class UtilisateurService {
 
-  baseUrl: string = 'http://localhost:8082/JDR/utilisateur/';
+  baseUrl: string = 'http://localhost:8082/JDR/utilisateurs/';
 
   constructor(private http: HttpClient) { }
 
