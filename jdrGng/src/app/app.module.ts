@@ -37,7 +37,6 @@ import {UtilisateurService} from './services/utilisateur.service';
 import { ScenarioListComponent } from './scenario-list/scenario-list.component';
 import { RouteItemComponent } from './route-item/route-item.component';
 import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
-import { HomeComponent } from './home/home.component';
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -46,12 +45,11 @@ const routes: Routes = [
   {path: 'list-parties', component : ListPartiesComponent},
   {path: 'personnage', component : PersonnageComponent},
   {path: 'connexion', component : ConnexionComponent},
-  {path: 'scenario', component : ScenarioComponent}
+  {path: 'scenario', component : ScenarioComponent},
   {path: 'profil', component : ProfilComponent},
   {path: 'newgame', component : PersonnageComponent},
   {path: 'loadgame', component : ListPartiesComponent},
-  {path: 'editperso', component : ListPersonnageComponent},
-  { path: 'home',   component: HomeComponent}
+  {path: 'editperso', component : ListPersonnageComponent}
 ]
 
 @NgModule({
@@ -82,8 +80,7 @@ const routes: Routes = [
     RouteItemComponent,
     ScenarioItemComponent,
     RouteListComponent,
-    ListPersonnageComponent,
-    HomeComponent
+    ListPersonnageComponent
   ],
   imports: [
     BrowserModule,
