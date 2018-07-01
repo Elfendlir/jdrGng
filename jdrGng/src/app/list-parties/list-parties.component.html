@@ -7,21 +7,21 @@
 </div>
 <table class="table">
   <thead class="thead-dark">
-  <tr>
-    <th scope="col"></th>
-    <th scope="col">Personnage</th>
-    <th scope="col"></th>
-    <th scope="col">Scenario</th>
-    <th scope="col">#</th>
-  </tr>
-  </thead>
+<tr>
+  <th scope="col"></th>
+  <th scope="col">Personnage</th>
+  <th scope="col"></th>
+  <th scope="col">Scenario</th>
+  <th scope="col">#</th>
+</tr>
+</thead>
   <tbody>
     <tr *ngFor="let p of parties">
       <th scope="row" width="50px"><img class="iconeTab" src="{{imgUrl + p.perso.image}}" /></th>
       <td>{{p.perso.name}}</td>
       <td width="50px"><img class="iconeTab" src="../../assets/images/default.svg" /></td>
       <td>{{p.scenario.titre}}</td>
-      <td><button (click)="lancerPartie(p)">Lancer partie</button></td>
+      <td><a routerLink="/interface-jdr/{{p.id}}" routerLinkActive="active">Lancer partie</a></td>
     </tr>
   </tbody>
 </table>

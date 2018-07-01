@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Utilisateur} from "../classes/utilisateur";
+import {Utilisateur} from '../classes/utilisateur';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class UtilisateurService {
 
   baseUrl: string = 'http://localhost:8082/JDR/utilisateur/';
@@ -17,6 +15,9 @@ export class UtilisateurService {
   }
   getOne(id: number): Observable<any> {
     return this.http.get(this.baseUrl + '' + id);
+  }
+  login(email: string, mdp: string): Observable<any> {
+    return this.http.get(this.baseUrl + '' + mdp + '/' + email);
   }
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);

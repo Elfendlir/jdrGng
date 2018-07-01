@@ -1,11 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {Partie} from "../classes/partie";
+import {Partie} from '../classes/partie';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PartieService {
 
   baseUrl: string = 'http://localhost:8082/JDR/parties/';
