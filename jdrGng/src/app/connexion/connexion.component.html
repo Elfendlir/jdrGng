@@ -1,6 +1,7 @@
 <app-header></app-header>
 <app-nav [user]="user"></app-nav>
-<div class="container">
+<div *ngIf="user == undefined" class="container">
+  <h3>Connexion</h3>
   <form *ngIf="user == undefined" [formGroup]="userForm" (ngSubmit)="submitForm()">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
@@ -17,6 +18,9 @@
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>
   </form>
+</div>
+<div *ngIf="user == undefined">
+  <app-inscription (newUser)="connexion($event)"></app-inscription>
 </div>
 <!--<button *ngIf="user" (click)="deconnection()">Deconnection</button>-->
 <router-outlet *ngIf="user"></router-outlet>

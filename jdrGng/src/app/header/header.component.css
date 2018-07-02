@@ -1,5 +1,7 @@
 .container-fluid {
   background-color: #DFC690;
+  margin: 0px;
+  padding: 0px;
 }
 .jumbotron {
   width: 100%;
@@ -14,6 +16,7 @@
   border-color:#6c582d #6c582d #6c582d #6c582d;
   background-color: #A8946A;
   color: white;
+  margin: 0px;
 }
 .navbar {
   width: 100%;
