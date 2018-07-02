@@ -12,10 +12,14 @@
   <td><p>{{scenario.titre}}</p></td>
 
   <div class="form-group">
-    <label for="scenes">scene :</label>
+    <label for="titres">Titre :</label>
+    <input type="text" class="form-control col-4" id="titres" formControlName="titre">
+  </div>
+      <div class="form-group">
+    <label for="scenes">Scene :</label>
     <textarea class="form-control" id="scenes" formControlName="scene" cols="12" rows="10"></textarea>
   </div>
-<td><app-route-list></app-route-list></td>
+<td><app-route-list (listRoutes)="maFonction($event)"></app-route-list><app-item-liste></app-item-liste></td>
 
 
   <button type="submit" class="btn btn-primary">Save Change</button>

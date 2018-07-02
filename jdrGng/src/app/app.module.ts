@@ -36,6 +36,8 @@ import {UtilisateurService} from './services/utilisateur.service';
 import { ScenarioListComponent } from './scenario-list/scenario-list.component';
 import { RouteItemComponent } from './route-item/route-item.component';
 import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
+import { TestComponent } from './test/test.component';
+import { ItemListeComponent } from './item-liste/item-liste.component';
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -68,7 +70,9 @@ const routes: Routes = [
     RouteListComponent,
     ScenarioListComponent,
     RouteItemComponent,
-    ScenarioItemComponent
+    ScenarioItemComponent,
+    TestComponent,
+    ItemListeComponent
   ],
   imports: [
     BrowserModule,

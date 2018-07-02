@@ -8,6 +8,7 @@
   <tr *ngFor="let s of scenarios">
     <td>{{s.titre}}</td>
     <td><button class="btn btn-primary btn-sm" (click)="mafonction(s)">edit</button></td>
+    <td><button class="btn btn-primary btn-sm" (click)="delFonction(s)">suprimer</button></td>
   </tr>
 </table>
 <app-route *ngIf="showAppRoute" [scenario]="scenario"></app-route>

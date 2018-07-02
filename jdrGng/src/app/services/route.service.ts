@@ -6,7 +6,7 @@ import {Route} from '../classes/route';
 @Injectable()
 export class RouteService {
 
-  baseUrl: string = 'http://localhost:8082/JDR/route/';
+  baseUrl: string = 'http://localhost:8082/JDR/routes/';
 
   constructor(private http: HttpClient) { }
 
