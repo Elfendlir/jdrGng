@@ -33,8 +33,7 @@ export class ConnexionComponent implements OnInit {
     if (this.userForm.valid) {
       this.userServ.login(this.userForm.value.email, this.userForm.value.mdp).subscribe(
         leUser => {
-          this.user = leUser;
-          localStorage.setItem('user', JSON.stringify(leUser));
+          this.connexion(leUser);
         },
             () => {
               this.user = undefined;
@@ -47,7 +46,10 @@ export class ConnexionComponent implements OnInit {
     } else {
       console.log('plop');
     }
-    //this.userServ.login()
+  }
+  connexion(user) {
+    this.user = user;
+    localStorage.setItem('user', JSON.stringify(user));
   }
   deconnection() {
     this.user = undefined;

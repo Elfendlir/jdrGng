@@ -37,6 +37,7 @@ import {UtilisateurService} from './services/utilisateur.service';
 import { ScenarioListComponent } from './scenario-list/scenario-list.component';
 import { RouteItemComponent } from './route-item/route-item.component';
 import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -50,7 +51,7 @@ const routes: Routes = [
   {path: 'newgame', component : PersonnageComponent},
   {path: 'loadgame', component : ListPartiesComponent},
   {path: 'editperso', component : ListPersonnageComponent},
-  {path: 'home', component : AppComponent}
+  {path: 'inscription', component : InscriptionComponent}
 ]
 
 @NgModule({
@@ -81,7 +82,8 @@ const routes: Routes = [
     RouteItemComponent,
     ScenarioItemComponent,
     RouteListComponent,
-    ListPersonnageComponent
+    ListPersonnageComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,
