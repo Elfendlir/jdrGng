@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
 .persoCard {
   float: left;
   margin: 5px;
@@ -130,7 +132,7 @@ h3 {
   background-color: #DFC690;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
 * {
   font-family: Cinzel;
 }

@@ -1,8 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
 .container-fluid {
   background-color: #DFC690;
 }
 
-@import url('https://fonts.googleapis.com/css?family=Cinzel');
+
 * {
   font-family: Cinzel;
 }

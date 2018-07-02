@@ -15,6 +15,7 @@ export class ConnexionComponent implements OnInit {
               private fb: FormBuilder) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.userForm = this.fb.group({
       'email': ['',
         Validators.compose(
@@ -31,13 +32,17 @@ export class ConnexionComponent implements OnInit {
   {
     if (this.userForm.valid) {
       this.userServ.login(this.userForm.value.email, this.userForm.value.mdp).subscribe(
-        leUser => this.user = leUser,
-        () => {
-          this.user = undefined;
+        leUser => {
+          this.user = leUser;
+          localStorage.setItem('user', JSON.stringify(leUser));
         },
-        () => {
-          console.log(this.user);
-        }
+            () => {
+              this.user = undefined;
+              localStorage.removeItem('user');
+            },
+            () => {
+              console.log(this.user);
+            }
       );
     } else {
       console.log('plop');
@@ -46,5 +51,6 @@ export class ConnexionComponent implements OnInit {
   }
   deconnection() {
     this.user = undefined;
+    localStorage.removeItem('user');
   }
 }
