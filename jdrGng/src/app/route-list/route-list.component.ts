@@ -1,5 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {RouteService} from '../services/route.service';
+import {Route} from '../classes/route';
 
 @Component({
   selector: 'app-route-list',
@@ -10,11 +11,16 @@ export class RouteListComponent implements OnInit {
 
   constructor(private routeService: RouteService) { }
 
-  route;
-  @Output() listRoutes = new EventEmitter<any>();
+  listRoutes;
+  @Output() route = new EventEmitter<Route>();
+
   ngOnInit() {
     this.routeService.list().subscribe(
-      laRep => this.route = laRep
+      laRep => this.listRoutes = laRep
     );
+  }
+
+  addRoute(route) {
+    this.route.emit(route);
   }
 }

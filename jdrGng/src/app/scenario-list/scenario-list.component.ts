@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ScenarioService} from '../services/scenario.service';
 
 @Component({
@@ -8,17 +8,13 @@ import {ScenarioService} from '../services/scenario.service';
 })
 export class ScenarioListComponent implements OnInit {
 
-  @Output() output = new EventEmitter();
+  showAppRoute: Boolean = false;
+  scenario;
+  @Input() listScenarios;
 
   constructor(private scenarioService: ScenarioService) { }
 
-  scenarios;
-  showAppRoute: Boolean = false;
-  scenario;
   ngOnInit() {
-    this.scenarioService.list().subscribe(
-      laRep => this.scenarios = laRep
-    );
   }
 
   mafonction(scenario) {
@@ -31,13 +27,5 @@ export class ScenarioListComponent implements OnInit {
     this.scenario = scenario;
     console.log(this.scenario.id);
     this.scenarioService.delete(this.scenario.id).subscribe();
-
-    this.scenarioService.list().subscribe(
-      laRep => this.scenarios = laRep
-    );
-    console.log('Update');
-    this.scenarioService.list().subscribe(
-      laRep => this.scenarios = laRep
-    );
   }
 }

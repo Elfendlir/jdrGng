@@ -5,9 +5,9 @@
     <th scope="col"></th>
   </tr>
   </thead>
-  <tr *ngFor="let r of route">
-    <td><input type="checkbox"(click)="lafonction(r.titre)"/></td>
+  <tr *ngFor="let r of listRoutes">
     <p>{{r.titre}}</p>
+    <td><a (click)="addRoute(r)">+</a></td>
   </tr>
 </table>
 

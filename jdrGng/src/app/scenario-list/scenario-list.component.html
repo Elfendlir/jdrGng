@@ -5,10 +5,11 @@
     <th scope="col"></th>
   </tr>
   </thead>
-  <tr *ngFor="let s of scenarios">
-    <td>{{s.titre}}</td>
-    <td><button class="btn btn-primary btn-sm" (click)="mafonction(s)">edit</button></td>
-    <td><button class="btn btn-primary btn-sm" (click)="delFonction(s)">suprimer</button></td>
-  </tr>
+  <tbody>
+    <tr *ngFor="let s of listScenarios">
+      <td>{{s.titre}}</td>
+      <td><button class="btn btn-primary btn-sm" (click)="mafonction(s)">edit</button></td>
+    </tr>
+  </tbody>
 </table>
 <app-route *ngIf="showAppRoute" [scenario]="scenario"></app-route>
