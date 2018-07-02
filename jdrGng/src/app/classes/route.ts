@@ -8,6 +8,7 @@ export class Route {
     public scene: string,
     public imageScene: string,
     public routeInitiale: Route,
+    //public listeParties: Set<Partie>,
     public listeRoutesSuivantes: Set<Route>,
     public listeItemsRoute: Set<Item>,
     public scenario: Scenario

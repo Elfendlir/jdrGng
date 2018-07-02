@@ -8,6 +8,7 @@ export class Partie {
     public id: number,
     public perso: Personnage,
     public scenario: Scenario,
+    //public currentRoute: Route,
     public user: Utilisateur
   ) {}
 }

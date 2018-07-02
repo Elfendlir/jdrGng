@@ -7,6 +7,7 @@ import {ScenarioService} from '../services/scenario.service';
 import {HttpClient, HttpEventType, HttpResponse} from '@angular/common/http';
 import {UploadFileService} from '../services/upload-file.service';
 import * as myGlobals from '../globals';
+import {RouteService} from "../services/route.service";
 
 @Component({
   selector: 'app-personnage',
@@ -43,6 +44,8 @@ export class PersonnageComponent implements OnInit {
   // Sers pour l'affichage CSS de la selection du perso/scenario
   lastSelectedPerso;
   lastSelectedScen;
+  // Sers pour définir la current route de la partie
+  //currentRoute;
 
   constructor(private persoService: PersonnageService,
               private inventaireService: InventaireService,
@@ -50,6 +53,7 @@ export class PersonnageComponent implements OnInit {
               private fb: FormBuilder,
               private uploadService: UploadFileService,
               private partieService: PartieService,
+              private routeService: RouteService,
               private http: HttpClient) {
     this.keys = Object.keys(this.jobEnum).filter(f => !isNaN(Number(f)));
   }
@@ -127,10 +131,18 @@ export class PersonnageComponent implements OnInit {
     );
   }
   createPartie() {
+    //TODO
+    //Récupère la route initiale du scénario
+    //this.routeService.getRouteInitiale(this.scenarioSelected.id).subscribe(
+    // routeSelected => this.currentRoute = routeSelected
+    // );
     const partie = {
       'id': 0,
       'perso'   : this.persoSelected,
       'scenario': this.scenarioSelected,
+      //TODO
+      //Définit la route initiale comme currentRoute a la création de la partie
+      //'currentRoute': this.currentRoute,
       'user'    : null
     };
     console.log(partie);

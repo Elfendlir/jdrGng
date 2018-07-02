@@ -5,3 +5,7 @@
 tr:hover {
   background-color: dimgrey;
 }
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
+* {
+  font-family: Cinzel;
+}
