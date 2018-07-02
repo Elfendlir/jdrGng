@@ -1,6 +1,7 @@
 import {Personnage} from "./personnage";
 import {Scenario} from "./scenario";
 import {Utilisateur} from "./utilisateur";
+import {Route} from "./route";
 
 export class Partie {
 
@@ -8,7 +9,7 @@ export class Partie {
     public id: number,
     public perso: Personnage,
     public scenario: Scenario,
-    //public currentRoute: Route,
+    public currentRoute: Route,
     public user: Utilisateur
   ) {}
 }

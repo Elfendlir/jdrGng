@@ -14,41 +14,56 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="zone-texte.component.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jdrGng/src/app/zone-texte/zone-texte.component.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="zone-texte.component.ts" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jdrGng/src/app/zone-texte/zone-texte.component.ts">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="22" column="6" lean-forward="true" selection-start-line="22" selection-start-column="6" selection-end-line="22" selection-end-column="49" />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="personnage.component.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="444">
+            <state relative-caret-position="750">
               <caret line="81" column="6" lean-forward="true" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="personnage.component.ts" pinned="false" current-in-tab="true">
+      <file leaf-file-name="personnage.component.ts" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="131" column="3" lean-forward="true" selection-start-line="131" selection-start-column="3" selection-end-line="131" selection-end-column="3" />
+            <state relative-caret-position="356">
+              <caret line="156" column="3" lean-forward="true" selection-start-line="156" selection-start-column="3" selection-end-line="156" selection-end-column="3" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="icone-quitter.component.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.module.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jdrGng/src/app/app.module.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="255">
+              <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="connexion.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jdrGng/src/app/connexion/connexion.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="app.component.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/jdrGng/src/app/app.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
             </state>
           </provider>
         </entry>
@@ -93,7 +108,6 @@
         <option value="$PROJECT_DIR$/jdrGng/src/app/classes/item.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/classes/inventaire.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/list-parties/list-parties.component.html" />
-        <option value="$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.html" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/lance-des/lance-des.component.html" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/lance-des/lance-des.component.ts" />
@@ -102,16 +116,17 @@
         <option value="$PROJECT_DIR$/jdrGng/src/app/home/home.component.html" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/app.component.html" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/header/header.component.html" />
-        <option value="$PROJECT_DIR$/jdrGng/src/app/app.module.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/nav/nav.component.html" />
-        <option value="$PROJECT_DIR$/jdrGng/src/app/services/route.service.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/services/utilisateur.service.ts" />
-        <option value="$PROJECT_DIR$/jdrGng/src/app/zone-texte/zone-texte.component.html" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/list-personnage/list-personnage.component.css" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/list-personnage/list-personnage.component.html" />
-        <option value="$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/classes/partie.ts" />
         <option value="$PROJECT_DIR$/jdrGng/src/app/classes/route.ts" />
+        <option value="$PROJECT_DIR$/jdrGng/src/app/services/route.service.ts" />
+        <option value="$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.ts" />
+        <option value="$PROJECT_DIR$/jdrGng/src/app/zone-texte/zone-texte.component.html" />
+        <option value="$PROJECT_DIR$/jdrGng/src/app/app.module.ts" />
+        <option value="$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.html" />
       </list>
     </option>
   </component>
@@ -173,7 +188,7 @@
               <item name="jdrGng" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="classes" type="462c0819:PsiDirectoryNode" />
+              <item name="connexion" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jdrGng" type="b2602c69:ProjectViewProjectNode" />
@@ -181,23 +196,7 @@
               <item name="jdrGng" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="icone-personnage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jdrGng" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jdrGng" type="462c0819:PsiDirectoryNode" />
-              <item name="jdrGng" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="personnage" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jdrGng" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jdrGng" type="462c0819:PsiDirectoryNode" />
-              <item name="jdrGng" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="zone-texte" type="462c0819:PsiDirectoryNode" />
+              <item name="icone-quitter" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -250,12 +249,12 @@
       <workItem from="1530385150297" duration="8422000" />
       <workItem from="1530435935397" duration="13464000" />
       <workItem from="1530462152573" duration="3237000" />
-      <workItem from="1530516677532" duration="5501000" />
+      <workItem from="1530516677532" duration="10225000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95587000" />
+    <option name="totallyTimeSpent" value="100311000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -340,11 +339,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/jdrGng/src/app/app.module.ts</url>
-        </line-breakpoint>
-      </breakpoints>
       <option name="time" value="1" />
     </breakpoint-manager>
   </component>
@@ -470,20 +464,10 @@
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/scenario/scenario.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/connexion/connexion.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
           <caret line="26" column="3" lean-forward="true" selection-start-line="26" selection-start-column="3" selection-end-line="26" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="28" lean-forward="true" selection-start-line="3" selection-start-column="28" selection-end-line="3" selection-end-column="28" />
         </state>
       </provider>
     </entry>
@@ -516,13 +500,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/app.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/classes/utilisateur.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -551,13 +528,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/app.module.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret line="33" column="60" selection-start-line="33" selection-start-column="60" selection-end-line="33" selection-end-column="60" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/partie.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -565,21 +535,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/route.service.ts">
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/item.service.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/item.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/inventaire.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/personnage.service.ts">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/scenario.service.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -594,6 +575,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="59" selection-start-line="8" selection-start-column="59" selection-end-line="8" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -639,10 +623,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/classes/partie.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="e#0#40#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/classes/route.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/services/route.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#43#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="156" column="3" lean-forward="true" selection-start-line="156" selection-start-column="3" selection-end-line="156" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/zone-texte/zone-texte.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="8" lean-forward="true" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+        <state relative-caret-position="51">
+          <caret line="3" column="25" selection-start-line="3" selection-start-column="25" selection-end-line="3" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
           </folding>
@@ -658,29 +679,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="444">
+        <state relative-caret-position="750">
           <caret line="81" column="6" lean-forward="true" selection-start-line="81" selection-start-column="6" selection-end-line="81" selection-end-column="6" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/classes/route.ts">
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/app.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="53" column="1" lean-forward="true" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/connexion/connexion.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="9" lean-forward="true" selection-start-line="18" selection-start-column="9" selection-end-line="18" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/icone-quitter/icone-quitter.component.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
-          <caret line="10" column="39" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/classes/partie.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jdrGng/src/app/personnage/personnage.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="131" column="3" lean-forward="true" selection-start-line="131" selection-start-column="3" selection-end-line="131" selection-end-column="3" />
+          <caret line="9" column="26" lean-forward="true" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
         </state>
       </provider>
     </entry>

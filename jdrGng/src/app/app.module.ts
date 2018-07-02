@@ -49,7 +49,8 @@ const routes: Routes = [
   {path: 'profil', component : ProfilComponent},
   {path: 'newgame', component : PersonnageComponent},
   {path: 'loadgame', component : ListPartiesComponent},
-  {path: 'editperso', component : ListPersonnageComponent}
+  {path: 'editperso', component : ListPersonnageComponent},
+  {path: 'home', component : AppComponent}
 ]
 
 @NgModule({

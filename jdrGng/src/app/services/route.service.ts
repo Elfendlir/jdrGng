@@ -16,6 +16,9 @@ export class RouteService {
   getOne(id: number): Observable<any> {
     return this.http.get(this.baseUrl + '' + id);
   }
+  getRouteInitiale(id: number): Observable<any> {
+    return this.http.get(this.baseUrl + 'initiale/' + id);
+  }
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
   }

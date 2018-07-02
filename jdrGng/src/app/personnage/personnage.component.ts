@@ -143,6 +143,7 @@ export class PersonnageComponent implements OnInit {
       //TODO
       //Définit la route initiale comme currentRoute a la création de la partie
       //'currentRoute': this.currentRoute,
+      'currentRoute': null,
       'user'    : null
     };
     console.log(partie);
