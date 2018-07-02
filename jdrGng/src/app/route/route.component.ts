@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RouteService} from '../services/route.service';
 
@@ -11,14 +11,23 @@ export class RouteComponent implements OnInit {
   routeForm: FormGroup;
   formSubmitted = false;
 
+
   constructor(private fb: FormBuilder, private cs: RouteService) { }
+
   @Input() scenario;
+
   ngOnInit() {
     this.routeForm = this.fb.group({
-      'scene': [ ' ' ,
+      'scene': [ '' ,
         Validators.compose([Validators.required])],
-      'scenario': this.scenario
+      'scenario': this.scenario,
+      'titre': '',
+      'listeRoutesSuivantes': []
     });
+  }
+
+  maFonction(routelist) {
+      this.routeForm.value.listeRoutesSuivantes = routelist;
   }
 
   submitForm() {
