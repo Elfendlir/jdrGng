@@ -134,8 +134,8 @@ export class PersonnageComponent implements OnInit {
     //TODO
     //Récupère la route initiale du scénario
     //this.routeService.getRouteInitiale(this.scenarioSelected.id).subscribe(
-    // routeSelected => this.currentRoute = routeSelected
-    // );
+    //routeSelected => this.currentRoute = routeSelected
+    //);
     const partie = {
       'id': 0,
       'perso'   : this.persoSelected,
