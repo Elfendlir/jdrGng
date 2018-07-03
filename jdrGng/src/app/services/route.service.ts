@@ -26,4 +26,7 @@ export class RouteService {
   update(route: Route): Observable<any> {
     return this.http.put(this.baseUrl, route);
   }
+  getRoutesByScenarioId(id: number): Observable<any> {
+    return this.http.get(this.baseUrl + 'byscenario/' + id);
+  }
 }

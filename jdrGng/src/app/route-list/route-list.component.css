@@ -1,0 +1,18 @@
+span {
+  content: "\002B";
+}
+.symbol-small {
+  color: white;
+  font-weight: 700;
+  font-size: 44px;
+  font-size: 1rem;
+}
+.tr-back {
+  background-color: white;
+}
+.table-route {
+  margin: 10px;
+}
+.blue-back {
+  background-color: aquamarine;
+}

@@ -1,13 +1,15 @@
-<table class="table">
-  <thead class="thead">
-  <tr>
-    <th scope="col">route</th>
-    <th scope="col"></th>
-  </tr>
+<table class="table table-route">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Scenes disponibles</th>
+      <th scope="col"></th>
+    </tr>
   </thead>
-  <tr *ngFor="let r of listRoutes">
-    <p>{{r.titre}}</p>
-    <td><a (click)="addRoute(r)">+</a></td>
-  </tr>
+  <tbody>
+    <tr class="tr-back" *ngFor="let r of listRoutes" (click)="changeCurrentRoute($event, r)">
+      <td>{{r.titre}}</td>
+      <td><a class="btn btn-primary" (click)="addRoute(r)"><span class="symbol-small">&#43;</span></a></td>
+    </tr>
+  </tbody>
 </table>
 

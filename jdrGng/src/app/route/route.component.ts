@@ -11,13 +11,14 @@ import {Route} from '../classes/route';
 export class RouteComponent implements OnInit {
   routeForm: FormGroup;
   formSubmitted = false;
-
+  listRoutes;
 
   constructor(private fb: FormBuilder, private cs: RouteService) { }
 
   @Input() scenario;
   route;
   ngOnInit() {
+    this.getRoutesByScenarioId();
     this.routeForm = this.fb.group({
       'scene': [ '' ,
         Validators.compose([Validators.required])],
@@ -40,26 +41,53 @@ export class RouteComponent implements OnInit {
     console.log(this.routeForm.value);
     console.log('++++++++');
   }
+  changeCurrentRoute(route)
+  {
+    this.route = route;
+  }
+  getRoutesByScenarioId() {
+    this.cs.getRoutesByScenarioId(this.scenario.id).subscribe(
+      laRep => this.listRoutes = laRep
+    );
+  }
   submitForm() {
     this.formSubmitted = true;
 
     if (this.routeForm.valid ) {
-      console.log('---------');
-      console.log(this.routeForm.value);
-      console.log('---------');
-      this.cs.add(this.routeForm.value).subscribe(
-        routeFromDb => {
-          console.log('//////////');
-          console.log(routeFromDb);
-          console.log('//////////');
-        },
-        () => {
-          console.log('error');
-        },
-        () => {
-          console.log('YOU WIN ?!');
-        }
-      );
+      if (this.route !== undefined)
+      {
+        this.cs.update(this.route).subscribe(
+          routeFromDb => {
+            console.log('//////////');
+            console.log(routeFromDb);
+            console.log('//////////');
+          },
+          () => {
+            console.log('error');
+          },
+          () => {
+            console.log('YOU WIN ?!');
+            this.getRoutesByScenarioId();
+          }
+        );
+      }
+      else
+      {
+        this.cs.update(this.routeForm.value).subscribe(
+          routeFromDb => {
+            console.log('//////////');
+            console.log(routeFromDb);
+            console.log('//////////');
+          },
+          () => {
+            console.log('error');
+          },
+          () => {
+            console.log('YOU WIN ?!');
+            this.getRoutesByScenarioId();
+          }
+        );
+      }
     }
   }
 }
