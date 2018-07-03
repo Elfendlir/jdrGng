@@ -154,6 +154,11 @@ export class PersonnageComponent implements OnInit {
         console.log(this.partieCreated);
       }
     );
+    this.alert = {
+      id: 2,
+      type: 'success',
+      message: 'La partie a bien été créé !',
+    };
   }
 
   /**

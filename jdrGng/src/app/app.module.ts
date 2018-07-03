@@ -9,7 +9,6 @@ import {ConnexionComponent} from './connexion/connexion.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RouteComponent } from './route/route.component';
 import { RouteListComponent } from './route-list/route-list.component';
@@ -35,9 +34,10 @@ import {ScenarioService} from './services/scenario.service';
 import {RouteService} from './services/route.service';
 import {UtilisateurService} from './services/utilisateur.service';
 import { ScenarioListComponent } from './scenario-list/scenario-list.component';
-import { RouteItemComponent } from './route-item/route-item.component';
 import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { ItemComponent } from './item/item.component';
+import { ItemListComponent } from './item-list/item-list.component';
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -51,7 +51,8 @@ const routes: Routes = [
   {path: 'newgame', component : PersonnageComponent},
   {path: 'loadgame', component : ListPartiesComponent},
   {path: 'editperso', component : ListPersonnageComponent},
-  {path: 'inscription', component : InscriptionComponent}
+  {path: 'inscription', component : InscriptionComponent},
+  {path: 'item', component : ItemComponent}
 ]
 
 @NgModule({
@@ -74,16 +75,16 @@ const routes: Routes = [
     ScenarioComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent,
     ProfilComponent,
     RouteComponent,
     RouteListComponent,
     ScenarioListComponent,
-    RouteItemComponent,
     ScenarioItemComponent,
     RouteListComponent,
     ListPersonnageComponent,
-    InscriptionComponent
+    InscriptionComponent,
+    ItemComponent,
+    ItemListComponent
   ],
   imports: [
     BrowserModule,

@@ -7,7 +7,7 @@
   </thead>
   <tr *ngFor="let s of scenarios">
     <td>{{s.titre}}</td>
-    <td><button class="btn btn-primary btn-sm" (click)="mafonction(s)">edit</button></td>
+    <td><button class="btn btn-secondary btn-sm" (click)="mafonction(s)">edit</button></td>
   </tr>
 </table>
 <app-route *ngIf="showAppRoute" [scenario]="scenario"></app-route>

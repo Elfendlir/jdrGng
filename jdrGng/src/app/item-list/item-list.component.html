@@ -1,0 +1,54 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Nom</th>
+    <th scope="col">Description</th>
+    <th scope="col"></th>
+    <th scope="col"></th>
+  </tr>
+  </thead>
+  <tr *ngFor="let i of listItems">
+    <td>{{i.nomItem}}</td>
+    <td>{{i.description}}</td>
+    <td><button class="btn btn-secondary btn-sm" (click)="open(content, i)">Editer</button></td>
+    <td><button class="btn btn-secondary btn-sm" (click)="deleteItem(i)">Supprimer</button></td>
+  </tr>
+</table>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Item update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="itemForm" (ngSubmit)="submitForm()">
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="inputName" class="">Nom :</label>
+          <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
+                 formControlName="name" value="{{this.item.nomItem}}" placeholder="Enter name">
+          <div *ngIf="itemForm.controls['name'].invalid && (itemForm.controls['name'].dirty || itemForm.controls['name'].touched)"
+               class="alert alert-danger col-md-4">
+            <div >
+              Enter valid name.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <p></p>
+        </div>
+        <div class="col-sm-12">
+          <label for="inputDescription" class="">Description :</label>
+          <input type="text" class="form-control" id="inputDescription" aria-describedby="nameHelp"
+                 formControlName="description" value="{{this.item.description}}" placeholder="Enter description">
+        </div>
+        <div class="col-sm-12">
+          <p></p>
+        </div>
+        <button type="submit" class="btn btn-light">Sauvegarder</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

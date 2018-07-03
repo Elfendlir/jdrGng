@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
 
 @Component({
   selector: 'app-lance-des',
@@ -10,12 +11,12 @@ export class LanceDesComponent implements OnInit {
   randomResult: number;
   resultat: string;
 
-  constructor() { }
+  constructor(private modalService: NgbModal) { }
 
   ngOnInit() {
   }
 
-  lancerDes() {
+  lancerDes(content) {
     this.randomResult = Math.floor((Math.random() * 100) + 1);
     if (this.randomResult == 1){
       this.resultat = 'ECHEC CRITIQUE !!!';
@@ -26,6 +27,6 @@ export class LanceDesComponent implements OnInit {
     } else if (this.randomResult >= 50 && this.randomResult < 100) {
       this.resultat = 'REUSSITE';
     }
-    alert('Votre score est de : ' + this.randomResult + ' , ' + this.resultat);
+    this.modalService.open(content, { centered: true });
   }
 }

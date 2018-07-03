@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ScenarioService} from '../services/scenario.service';
+import * as myGlobals from "../globals";
 
 @Component({
   selector: 'app-scenario-list',
@@ -10,6 +11,7 @@ export class ScenarioListComponent implements OnInit {
 
   constructor(private scenarioService: ScenarioService) { }
 
+  imagesPath;
   scenarios;
   showAppRoute: Boolean = false;
   scenario;

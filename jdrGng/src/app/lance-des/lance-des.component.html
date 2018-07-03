@@ -2,6 +2,21 @@
   <div class="card-body">
     <img class="card-img-top" src="assets/images/desRouge.png" alt="Card image cap">
     <p class="card-text"></p>
-    <a class="btn btn-secondary" (click)="lancerDes()">Lancer</a>
+    <a class="btn btn-secondary" (click)="lancerDes(content)">Lancer</a>
   </div>
 </div>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Résultat</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <p>Votre score est de : {{randomResult}}, {{resultat}}</p>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-light" (click)="c('Close click')">Close</button>
+  </div>
+</ng-template>

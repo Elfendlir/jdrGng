@@ -13,11 +13,9 @@
         <div class="card bg-light mb-3" style="width: 15rem;">
           <div class="card-header"><h5>Liste des objets :</h5></div>
           <div class="card-body">
-            <p class="card-text">
-              Item 1<br/>
-              Item 2<br/>
-              Item 3<br/>
-              Item 4
+            <p class="card-text" *ngFor="let i of listItems">
+              {{i.nomItem}}<br/>
+              {{i.description}}<br/>
             </p>
           </div>
         </div>
