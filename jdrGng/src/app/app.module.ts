@@ -38,6 +38,7 @@ import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ItemComponent } from './item/item.component';
 import { ItemListComponent } from './item-list/item-list.component';
+import {ItemListeComponent} from "./item-liste/item-liste.component";
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
@@ -84,7 +85,8 @@ const routes: Routes = [
     ListPersonnageComponent,
     InscriptionComponent,
     ItemComponent,
-    ItemListComponent
+    ItemListComponent,
+    ItemListeComponent
   ],
   imports: [
     BrowserModule,

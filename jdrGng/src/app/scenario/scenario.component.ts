@@ -13,6 +13,7 @@ export class ScenarioComponent implements OnInit {
   userForm: FormGroup;
   formSubmitted = false;
   listScenarios;
+  alert: IAlert;
   constructor(private fb: FormBuilder, private scenarioServ: ScenarioService) { }
 
   ngOnInit() {

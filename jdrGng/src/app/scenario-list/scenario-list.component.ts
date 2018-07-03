@@ -9,8 +9,6 @@ import * as myGlobals from "../globals";
 })
 export class ScenarioListComponent implements OnInit {
 
-  showAppRoute: Boolean = false;
-  scenario;
   @Input() listScenarios;
 
   constructor(private scenarioService: ScenarioService) { }
