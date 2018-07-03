@@ -84,7 +84,7 @@ const routes: Routes = [
     ScenarioItemComponent,
     RouteListComponent,
     ListPersonnageComponent,
-    InscriptionComponent
+    InscriptionComponent,
     ItemListeComponent
   ],
   imports: [

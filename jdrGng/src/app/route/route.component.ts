@@ -44,6 +44,10 @@ export class RouteComponent implements OnInit {
     this.formSubmitted = true;
 
     if (this.routeForm.valid ) {
+      if (this.routeForm.value.listeRoutesSuivantes === null)
+      {
+        this.routeForm.value.listeRoutesSuivantes = [];
+      }
       console.log('---------');
       console.log(this.routeForm.value);
       console.log('---------');
