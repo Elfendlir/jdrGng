@@ -1,0 +1,76 @@
+<table class="table">
+  <thead class="thead-dark">
+  <tr>
+    <th scope="col">Avatar</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Classe</th>
+    <th scope="col">Editer</th>
+    <th scope="col">Supprimer</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let p of listPersos">
+    <th scope="row" width="50px"><img class="iconeTab" src="{{imagesPath + p.image}}" /></th>
+    <td>{{p.name}}</td>
+    <td>{{p.job}}</td>
+    <td><button class="btn btn-secondary" (click)="open(content, p)">Editer</button></td>
+    <td><button class="btn btn-secondary" (click)="deletePerso(p)">Supprimer</button></td>
+  </tr>
+  </tbody>
+</table>
+
+<ng-template #content let-c="close" let-d="dismiss">
+  <div class="modal-header">
+    <h4 class="modal-title">Profile update</h4>
+    <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <form [formGroup]="personnageForm" (ngSubmit)="submitForm()">
+      <div class="row">
+        <div class="col-sm-12">
+          <label for="inputName" class="">Nom :</label>
+          <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp"
+                 formControlName="name" value="{{this.perso.name}}" placeholder="Enter name">
+          <div *ngIf="personnageForm.controls['name'].invalid && (personnageForm.controls['name'].dirty || personnageForm.controls['name'].touched)"
+               class="alert alert-danger col-md-4">
+            <div >
+              Enter valid name.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <p></p>
+        </div>
+        <div class="col-sm-12">
+          <div class="card" style="width: 13rem;">
+            <img class="card-img-top" src="{{imagesPath+this.perso.image}}"/>
+            <label for="inputImage" class="">Avatar :</label>
+            <input type="file" (change)="onFileChanged($event)" class="form-control-file" id="inputImage"
+                   formControlName="image">
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <p></p>
+        </div>
+        <div class="col-sm-12">
+          <label for="inputSelect" class="">Classe :</label>
+          <select id="inputSelect" class="form-control" formControlName="job">
+            <option *ngFor="let key of keys" [value]="key" [label]="jobEnum[key]"></option>
+          </select>
+          <div *ngIf="personnageForm.controls['job'].invalid && (personnageForm.controls['job'].dirty || personnageForm.controls['job'].touched)"
+               class="alert alert-danger">
+            <div >
+              Select a job.
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <p></p>
+        </div>
+        <button type="submit" class="btn btn-light">Sauvegarder</button>
+      </div>
+    </form>
+  </div>
+</ng-template>

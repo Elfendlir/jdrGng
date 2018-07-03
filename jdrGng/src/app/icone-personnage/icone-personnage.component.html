@@ -1,4 +1,4 @@
-<button class="btn btn-outline-secondary mb-2 mr-2" (click)="openModal(content)">Personnage</button>
+<button class="btn btn-secondary"  (click)="openModal(content)">Personnage</button>
 
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
@@ -10,17 +10,17 @@
   <div class="modal-body">
     <div class="row">
       <div class="col-sm-6">
-        <div class="card bg-light mb-3" style="width: 18rem;">
-          <div class="card-header"><h5>Nom du personnage{{personnage.name}}</h5></div>
+        <div class="card bg-light mb-3" style="width: 13rem;">
+          <div class="card-header"><h5>{{partieEnCours.perso.name}}</h5></div>
           <div class="card-body">
-            <h6 class="card-subtitle mb-2 text-muted">Nom de l'utilisateur</h6>
-            <p class="card-text">Job : {{personnage.job}}</p>
+            <p class="card-text">Partie : {{partieEnCours.scenario.titre}}</p>
+            <p class="card-text">Classe : {{partieEnCours.perso.job}}</p>
           </div>
         </div>
       </div>
      <div class="col-sm-6">
-       <div class="card" style="width: 10rem;">
-         <img class="card-img-top" src="../assets/images/iconePersonnage.png" alt="Card image cap">
+       <div class="card" style="width: 13rem;">
+         <img class="card-img-top" src="{{this.imagesPath + partieEnCours.perso.image}}" alt="Card image cap">
        </div>
       </div>
     </div>

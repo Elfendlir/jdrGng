@@ -1,7 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel');
 .dark-modal .modal-content {
   background-color: #292b2c;
   color: white;
 }
 .dark-modal .close {
   color: white;
+}
+
+* {
+  font-family: Cinzel;
 }

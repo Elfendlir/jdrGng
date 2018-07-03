@@ -1,17 +1,14 @@
 <div class="card bg-light mb-3">
   <div class="card-body">
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
         <div class="col-sm-2">
-          <app-icone-personnage></app-icone-personnage>
+          <app-icone-personnage [partieEnCours]="partieEnCours"></app-icone-personnage>
         </div>
         <div class="col-sm-2">
-          <app-icone-inventaire></app-icone-inventaire>
+          <app-icone-inventaire [partieEnCours]="partieEnCours"></app-icone-inventaire>
         </div>
-        <div class="col-sm-1">
-          <app-icone-profil></app-icone-profil>
-        </div>
-        <div class="col-sm-5">
+        <div class="col-sm-6">
         </div>
         <div class="col-sm-1">
           <app-icone-options></app-icone-options>

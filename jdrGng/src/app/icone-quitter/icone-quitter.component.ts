@@ -17,4 +17,12 @@ export class IconeQuitterComponent implements OnInit {
   openModal(content) {
     this.modalService.open(content, { centered: true });
   }
+
+  //TODO la fonction closeApplication ne fonctionne pas pour le momment
+  closeApplication() {
+    if (confirm('Do you really want to close the application?')) {
+      window.open('','_parent','');
+      window.close();
+    }
+  }
 }

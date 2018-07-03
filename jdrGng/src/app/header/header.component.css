@@ -1,0 +1,40 @@
+.container-fluid {
+  background-color: #DFC690;
+  margin: 0px;
+  padding: 0px;
+}
+.jumbotron {
+  width: 100%;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  display: inline-block;
+  padding: 5px;
+  background-color: #fafafa;
+  border-width:10px 10px 10px 10px;
+  border-style:outset outset outset outset;
+  border-color:#6c582d #6c582d #6c582d #6c582d;
+  background-color: #A8946A;
+  color: white;
+  margin: 0px;
+}
+.navbar {
+  width: 100%;
+  -webkit-box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  -moz-box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  box-shadow: inset 0px 0px 10px 0px rgb(108, 88, 45);
+  display: inline-block;
+  padding: 0px;
+  background-color: #fafafa;
+  border-width:10px 10px 10px 10px;
+  border-style:outset outset outset outset;
+  border-color:#6c582d #6c582d #6c582d #6c582d;
+  background-color: #6c582d;
+  color: white;
+}
+.collapse {
+  background-color: #6c582d;
+}
+.nav-link {
+  color: white !important;
+}

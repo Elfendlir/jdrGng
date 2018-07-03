@@ -1,10 +1,16 @@
-export class Route {
+import {Scenario} from "./scenario";
+import {Item} from "./item";
+import {Partie} from "./partie";
 
-  constructor(
-    private id: number,
-    private scene: string,
-    private imageScene: string,
-    private titre: string,
-    private debut: boolean
-  ) {}
+export class Route {
+  public id: number;
+  public scene: string;
+  public imageScene: string;
+  public routeInitiale: Route;
+  public listeParties: Set<Partie>;
+  public listeRoutesSuivantes: Set<Route>;
+  public listeItemsRoute: Set<Item>;
+  public scenario: Scenario;
+  constructor() {}
+
 }

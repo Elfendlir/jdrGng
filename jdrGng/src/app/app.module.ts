@@ -9,7 +9,6 @@ import {ConnexionComponent} from './connexion/connexion.component';
 import { ScenarioComponent } from './scenario/scenario.component';
 import { HeaderComponent } from './header/header.component';
 import { NavComponent } from './nav/nav.component';
-import { FooterComponent } from './footer/footer.component';
 import { ProfilComponent } from './profil/profil.component';
 import { RouteComponent } from './route/route.component';
 import { RouteListComponent } from './route-list/route-list.component';
@@ -26,6 +25,7 @@ import { IconeOptionsComponent } from './icone-options/icone-options.component';
 import { IconeQuitterComponent } from './icone-quitter/icone-quitter.component';
 import { PersonnageComponent } from './personnage/personnage.component';
 import { ListPartiesComponent } from './list-parties/list-parties.component';
+import { ListPersonnageComponent } from './list-personnage/list-personnage.component';
 import {PersonnageService} from './services/personnage.service';
 import {ItemService} from './services/item.service';
 import {InventaireService} from './services/inventaire.service';
@@ -34,14 +34,26 @@ import {ScenarioService} from './services/scenario.service';
 import {RouteService} from './services/route.service';
 import {UtilisateurService} from './services/utilisateur.service';
 import { ScenarioListComponent } from './scenario-list/scenario-list.component';
-import { RouteItemComponent } from './route-item/route-item.component';
 import { ScenarioItemComponent } from './scenario-item/scenario-item.component';
-import { TestComponent } from './test/test.component';
-import { ItemListeComponent } from './item-liste/item-liste.component';
+import { InscriptionComponent } from './inscription/inscription.component';
+import { ItemComponent } from './item/item.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import {ItemListeComponent} from "./item-liste/item-liste.component";
 
 const routes: Routes = [
   {path: 'routelist', component : RouteListComponent},
-  {path: 'routeadd', component : RouteComponent}
+  {path: 'routeadd', component : RouteComponent},
+  {path: 'interface-jdr/:id', component : InterfaceJdrComponent},
+  {path: 'list-parties', component : ListPartiesComponent},
+  {path: 'personnage', component : PersonnageComponent},
+  {path: 'connexion', component : ConnexionComponent},
+  {path: 'scenario', component : ScenarioComponent},
+  {path: 'profil', component : ProfilComponent},
+  {path: 'newgame', component : PersonnageComponent},
+  {path: 'loadgame', component : ListPartiesComponent},
+  {path: 'editperso', component : ListPersonnageComponent},
+  {path: 'inscription', component : InscriptionComponent},
+  {path: 'item', component : ItemComponent}
 ]
 
 @NgModule({
@@ -64,14 +76,16 @@ const routes: Routes = [
     ScenarioComponent,
     HeaderComponent,
     NavComponent,
-    FooterComponent,
     ProfilComponent,
     RouteComponent,
     RouteListComponent,
     ScenarioListComponent,
-    RouteItemComponent,
     ScenarioItemComponent,
-    TestComponent,
+    RouteListComponent,
+    ListPersonnageComponent,
+    InscriptionComponent,
+    ItemComponent,
+    ItemListComponent,
     ItemListeComponent
   ],
   imports: [

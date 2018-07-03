@@ -1,5 +1,14 @@
-<div class="container">
+<div class="container-fluid">
   <div class="row">
+    <div class="col-sm-12">
+      <p></p>
+    </div>
+    <div class="col-sm-12">
+      <h1>Partie en cours : {{partieEnCours.scenario.titre}}</h1>
+    </div>
+    <div class="col-sm-12">
+      <p></p>
+    </div>
     <div class="col-sm-12">
       <p></p>
     </div>
@@ -10,13 +19,20 @@
       <app-zone-image></app-zone-image>
     </div>
     <div class="col-sm-3">
-      <app-zone-texte></app-zone-texte>
+      <app-zone-texte [partieEnCours]="partieEnCours"></app-zone-texte>
     </div>
     <div class="col-sm-12">
       <p></p>
     </div>
     <div class="col-sm-12">
-      <app-barre-menu></app-barre-menu>
+      <p></p>
+    </div>
+    <div class="col-sm-12">
+      <app-barre-menu [partieEnCours]="partieEnCours"></app-barre-menu>
+    </div>
+    <div class="col-sm-12">
+      <p></p>
     </div>
   </div>
 </div>
+

@@ -1,27 +1,31 @@
-<div *ngFor="let p of parties">
-  <!--<div class="row">-->
-    <!--<div class="col-md-5"><img src="{{imgUrl + p.perso.image}}" /><p>{{p.perso.name}}</p></div>-->
-    <!--<div class="col-md-5"><img src="../../assets/images/default.svg" /><p>{{p.scenario.titre}}</p></div>-->
-  <!--</div>-->
-
-</div>
-<table class="table">
-  <thead class="thead-dark">
-<tr>
-  <th scope="col"></th>
-  <th scope="col">Personnage</th>
-  <th scope="col"></th>
-  <th scope="col">Scenario</th>
-  <th scope="col">#</th>
-</tr>
-</thead>
-  <tbody>
-    <tr *ngFor="let p of parties">
-      <th scope="row" width="50px"><img class="iconeTab" src="{{imgUrl + p.perso.image}}" /></th>
-      <td>{{p.perso.name}}</td>
-      <td width="50px"><img class="iconeTab" src="../../assets/images/default.svg" /></td>
-      <td>{{p.scenario.titre}}</td>
-      <td><button (click)="lancerPartie(p)">Lancer partie</button></td>
+<div class="container-fluid">
+  <h1>Parties disponibles</h1>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col"></th>
+      <th scope="col">Personnage</th>
+      <th scope="col"></th>
+      <th scope="col">Scenario</th>
+      <th scope="col">#</th>
     </tr>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <tr *ngFor="let p of parties">
+        <th scope="row" width="50px"><img class="iconeTab" src="{{imgUrl + p.perso.image}}" /></th>
+        <td>{{p.perso.name}}</td>
+        <td width="50px"><img class="iconeTab" src="../../assets/images/default.svg" /></td>
+        <td>{{p.scenario.titre}}</td>
+        <td><button type="button" class="btn btn-secondary" (click)="lancerPartie(p)" [routerLink]="['/interface-jdr', p.id]">Jouer</button></td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="buttonThemeLaunch">
+    <div class="buttonAddLauch">
+      <img src="../../assets/themeImages/lauchButton.svg" />
+    </div>
+    <div class="buttonAddRightLauch">
+      <span [routerLink]="['/personnage']">Créer partie</span>
+    </div>
+  </div>
+</div>

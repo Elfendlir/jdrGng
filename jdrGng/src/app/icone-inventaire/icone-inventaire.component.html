@@ -1,28 +1,26 @@
-<button class="btn btn-outline-secondary mb-2 mr-2" (click)="openModal(content)">Inventaire</button>
+<button class="btn btn-secondary" (click)="openModal(content)">Inventaire</button>
 
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
-    <h4 class="modal-title">Inventaire</h4>
+    <h4 class="modal-title">Inventaire de {{partieEnCours.perso.name}}</h4>
     <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>
   <div class="modal-body">
     <div class="row">
-      <div class="col-sm-8">
-        <div class="card bg-light mb-3" style="width: 18rem;">
+      <div class="col-sm-7">
+        <div class="card bg-light mb-3" style="width: 15rem;">
           <div class="card-header"><h5>Liste des objets :</h5></div>
           <div class="card-body">
-            <p class="card-text">
-              Item 1<br/>
-              Item 2<br/>
-              Item 3<br/>
-              Item 4
+            <p class="card-text" *ngFor="let i of listItems">
+              {{i.nomItem}}<br/>
+              {{i.description}}<br/>
             </p>
           </div>
         </div>
       </div>
-      <div class="col-sm-4">
+      <div class="col-sm-5">
         <div class="card" style="width: 10rem;">
           <img class="card-img-top" src="../assets/images/iconeSac.png" alt="Card image cap">
         </div>

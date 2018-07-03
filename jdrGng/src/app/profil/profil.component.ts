@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UtilisateurService} from '../services/utilisateur.service';
+import {Utilisateur} from '../classes/utilisateur';
 
 @Component({
   selector: 'app-profil',
@@ -8,27 +9,28 @@ import {UtilisateurService} from '../services/utilisateur.service';
   styleUrls: ['./profil.component.css']
 })
 export class ProfilComponent implements OnInit {
-   userForm: FormGroup;
-   formSubmitted = false;
-
-  constructor(private fb: FormBuilder, private cs: UtilisateurService) { }
+  userForm: FormGroup;
+  user: Utilisateur;
+  constructor(private fb: FormBuilder, private userServ: UtilisateurService) { }
 
   ngOnInit() {
+    this.user = JSON.parse(localStorage.getItem('user'));
     this.userForm = this.fb.group({
-      'email': [ '' ,
+      'email': [ this.user.email ,
         Validators.compose([Validators.required])],
-      'mdp': '',
-      'nom': ''
+      'mdp': this.user.mdp,
+      'nom': this.user.nom
     });
   }
 
   submitForm() {
-    this.formSubmitted = true;
-
     if (this.userForm.valid ) {
-      this.cs.add(this.userForm.value).subscribe(
+      this.user.nom = this.userForm.value.nom;
+      this.user.mdp = this.userForm.value.mdp;
+      this.user.email = this.userForm.value.email;
+      this.userServ.add(this.userForm.value).subscribe(
         userFromDb => {
-          console.log(userFromDb);
+          localStorage.setItem('user', JSON.stringify(userFromDb));
         }
       );
     }

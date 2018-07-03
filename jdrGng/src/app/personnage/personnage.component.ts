@@ -7,6 +7,7 @@ import {ScenarioService} from '../services/scenario.service';
 import {HttpClient, HttpEventType, HttpResponse} from '@angular/common/http';
 import {UploadFileService} from '../services/upload-file.service';
 import * as myGlobals from '../globals';
+import {RouteService} from "../services/route.service";
 
 @Component({
   selector: 'app-personnage',
@@ -43,6 +44,8 @@ export class PersonnageComponent implements OnInit {
   // Sers pour l'affichage CSS de la selection du perso/scenario
   lastSelectedPerso;
   lastSelectedScen;
+  // Sers pour définir la current route de la partie
+  //currentRoute;
 
   constructor(private persoService: PersonnageService,
               private inventaireService: InventaireService,
@@ -50,6 +53,7 @@ export class PersonnageComponent implements OnInit {
               private fb: FormBuilder,
               private uploadService: UploadFileService,
               private partieService: PartieService,
+              private routeService: RouteService,
               private http: HttpClient) {
     this.keys = Object.keys(this.jobEnum).filter(f => !isNaN(Number(f)));
   }
@@ -127,10 +131,19 @@ export class PersonnageComponent implements OnInit {
     );
   }
   createPartie() {
+    //TODO
+    //Récupère la route initiale du scénario
+    //this.routeService.getRouteInitiale(this.scenarioSelected.id).subscribe(
+    // routeSelected => this.currentRoute = routeSelected
+    // );
     const partie = {
       'id': 0,
       'perso'   : this.persoSelected,
       'scenario': this.scenarioSelected,
+      //TODO
+      //Définit la route initiale comme currentRoute a la création de la partie
+      //'currentRoute': this.currentRoute,
+      'currentRoute': null,
       'user'    : null
     };
     console.log(partie);
@@ -141,6 +154,11 @@ export class PersonnageComponent implements OnInit {
         console.log(this.partieCreated);
       }
     );
+    this.alert = {
+      id: 2,
+      type: 'success',
+      message: 'La partie a bien été créé !',
+    };
   }
 
   /**
@@ -155,7 +173,7 @@ export class PersonnageComponent implements OnInit {
       this.alert = {
         id: 1,
         type: 'error',
-        message: 'Remplisser correctement le formulaire !',
+        message: 'Remplissez correctement le formulaire !',
       };
     }
   }
@@ -235,14 +253,13 @@ export class PersonnageComponent implements OnInit {
     console.log(this.scenarioSelected);
     if (this.scenarioSelected === undefined || this.persoSelected === undefined)
     {
-      alert('Veuillez selectinner un personnage et un scenario !');
+      alert('Veuillez selectionner un personnage et un scenario !');
     } else {
       this.createPartie();
-      // TODO : envoyer la partie créée à l'interface de jeu
     }
   }
 }
-
+// TODO : Changer systeme enum
 export enum JobEnum {
   Mage     = 0,
   Guerrier = 1,

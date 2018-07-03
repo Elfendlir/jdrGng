@@ -5,3 +5,61 @@
 tr:hover {
   background-color: dimgrey;
 }
+h1 {
+  background-color: #A8946A;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 5px;
+  color: white;
+}
+.buttonTheme {
+  display: inline-flex;
+}
+.buttonAdd {
+  width: 23px;
+}
+.buttonTheme:hover {
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(216,194,54,1);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(216,194,54,1);
+  box-shadow: 0px 0px 5px 2px rgba(216,194,54,1);
+  cursor: pointer;
+}
+.buttonAddRight {
+  background-color: #A8946A;
+  max-width: 200px;
+  color: white;
+  display: flex;
+  padding: 5px;
+}
+.buttonAddRight span{
+  margin: auto; /* eh oui, tout bêtement */
+}
+.container-fluid {
+  background-color: #DFC690;
+}
+.buttonThemeLaunch {
+  display: inline-flex;
+  margin-bottom: 10px;
+}
+.buttonAddLauch {
+  width: 100px;
+  z-index: 999;
+}
+.buttonAddRightLauch {
+  background-color: #A8946A;
+  max-width: 300px;
+  color: white;
+  display: flex;
+  padding: 5px;
+  padding-left: 55px;
+  padding-right: 10px;
+  margin-left: -50px;
+  margin-top: 10px;
+  font-size: 26pt;
+  max-height: 80px;
+  border-bottom: 10px solid #6c582d;
+}
+.buttonThemeLaunch:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

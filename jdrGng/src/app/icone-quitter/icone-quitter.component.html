@@ -1,4 +1,4 @@
-<button class="btn btn-outline-secondary mb-2 mr-2" (click)="openModal(content)">Quitter</button>
+<button class="btn btn-secondary" (click)="openModal(content)">Quitter</button>
 
 <ng-template #content let-c="close" let-d="dismiss">
   <div class="modal-header">
@@ -8,19 +8,12 @@
     </button>
   </div>
   <div class="modal-body">
-    <div class="row">
+    <div class="container-fluid">
       <div class="col-sm-12">
-        <div class="card bg-light mb-3" style="width: 18rem;">
-          <div class="card-body">
-            <button type="button" class="btn btn-secondary btn-lg">Accueil</button>
-            <br/>
-            <p></p>
-            <button type="button" class="btn btn-secondary btn-lg">Sauvegarder</button>
-            <br/>
-            <p></p>
-            <button type="button" class="btn btn-secondary btn-lg">Quitter</button>
-          </div>
-        </div>
+        <a type="button" class="btn btn-secondary btn-lg" href="/">Accueil</a>
+        <br/>
+        <p></p>
+        <button type="button" class="btn btn-secondary btn-lg" (click)="closeApplication()">Quitter</button>
       </div>
     </div>
   </div>

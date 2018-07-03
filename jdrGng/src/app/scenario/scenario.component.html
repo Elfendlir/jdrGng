@@ -1,4 +1,4 @@
-<app-scenario-list></app-scenario-list>
+<app-scenario-list [listScenarios]="listScenarios"></app-scenario-list>
 <div *ngIf="!userForm.valid && formSubmitted">
   <div class="utilisateur">
     <div *ngIf="userForm.controls['titre'].hasError('required')"></div>
@@ -7,8 +7,25 @@
 <form [formGroup]="userForm" (ngSubmit)="submitForm()">
   <div class="form-group" >
     <label for="titreInput">Titre du scénario</label>
-    <input type="text" class="form-control col-4" id="titreInput" formControlName="titre"  >
+    <input type="text" class="form-control col-4" id="titreInput" formControlName="titre">
+    <div *ngIf="userForm.controls['titre'].invalid && (userForm.controls['titre'].dirty || userForm.controls['titre'].touched)"
+         class="alert alert-danger col-md-4">
+      <div>
+        Enter valid name.
+      </div>
+    </div>
   </div>
-<button type="submit" class="btn btn-primary">Editer un scénario</button>
+  <div class="row">
+    <label for="inputImage" class="col-md-1">Avatar :</label>
+    <input type="file" (change)="onFileChanged($event)" class="form-control-file col-md-4" id="inputImage"
+           formControlName="image">
+    <div *ngIf="selectedFile" class="progress">
+      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+           aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
+        {{progress.percentage}}%</div>
+    </div>
+    <button class="btn btn-success" [disabled]="!selectedFile" (click)="onUpload()">Upload</button>
+  </div>
+<button type="submit" class="btn btn-secondary">Editer un scénario</button>
 </form>
 

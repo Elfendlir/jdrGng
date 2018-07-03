@@ -1,7 +1,7 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, Input, OnInit, ViewEncapsulation} from '@angular/core';
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
-import {Personnage} from "../classes/personnage";
-import {PersonnageService} from "../services/personnage.service";
+import * as myGlobals from "../globals";
+import {Partie} from "../classes/partie";
 
 @Component({
   selector: 'app-icone-personnage',
@@ -11,15 +11,15 @@ import {PersonnageService} from "../services/personnage.service";
 })
 export class IconePersonnageComponent implements OnInit {
 
-  personnage: Personnage;
+  @Input() partieEnCours: Partie;
+  id: number;
+  imagesPath;
 
-  constructor(private modalService: NgbModal, private personnageService: PersonnageService) { }
+  constructor(private modalService: NgbModal) {
+  }
 
   ngOnInit() {
-    this.personnageService.getOne(1).subscribe(
-      personnage => {
-        this.personnage = personnage
-      });
+    this.imagesPath = myGlobals.imagesPath;
   }
 
   openModal(content) {

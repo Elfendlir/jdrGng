@@ -1,22 +1,21 @@
-
-  <div class="col-12">
-    <ngb-tabset>
-      <ngb-tab title="Profil">
-        <ng-template ngbTabContent>
-          <app-profil></app-profil>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Scénario">
-        <ng-template ngbTabContent>
-          <app-scenario></app-scenario>
-        </ng-template>
-      </ngb-tab>
-      <ngb-tab title="Partie">
-        <ng-template ngbTabContent>
-          <p>en cours</p>
-        </ng-template>
-      </ngb-tab>
-    </ngb-tabset>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="/">Home</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div *ngIf="user" class="navbar-nav">
+      <a class="nav-item nav-link" routerLink="profil">Profil</a>
+      <a class="nav-item nav-link" routerLink="scenario">Scénario</a>
+      <a class="nav-item nav-link" routerLink="item">Objets</a>
+      <a class="nav-item nav-link" routerLink="newgame">Nouvelle partie</a>
+      <a class="nav-item nav-link" routerLink="loadgame">Charger partie</a>
+      <a class="nav-item nav-link" routerLink="editperso">Editer personnage</a>
+      <a class="nav-item nav-link" (click)="deconnection()" href="/">Deconnexion</a>
+    </div>
+    <div *ngIf="!user" class="navbar-nav">
+      <a class="nav-item nav-link disabled" routerLink="connexion">Connexion</a>
+      <a class="nav-item nav-link disabled" routerLink="inscription">Inscription</a>
+    </div>
   </div>
-
-
+</nav>

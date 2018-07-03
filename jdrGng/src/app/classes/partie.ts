@@ -1,13 +1,15 @@
 import {Personnage} from "./personnage";
 import {Scenario} from "./scenario";
 import {Utilisateur} from "./utilisateur";
+import {Route} from "./route";
 
 export class Partie {
 
   constructor(
-    id: number,
-    scenario: Scenario,
-    perso: Personnage,
-    user: Utilisateur
+    public id: number,
+    public perso: Personnage,
+    public scenario: Scenario,
+    public currentRoute: Route,
+    public user: Utilisateur
   ) {}
 }

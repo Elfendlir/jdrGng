@@ -16,6 +16,9 @@ export class UtilisateurService {
   getOne(id: number): Observable<any> {
     return this.http.get(this.baseUrl + '' + id);
   }
+  login(email: string, mdp: string): Observable<any> {
+    return this.http.get(this.baseUrl + '' + mdp + '/' + email);
+  }
   delete(id: number): Observable<any> {
     return this.http.delete(this.baseUrl + '' + id);
   }

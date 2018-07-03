@@ -1,9 +1,14 @@
+import {Partie} from "./partie";
+import {Inventaire} from "./inventaire";
+
 export class Personnage {
 
   constructor(
-    private id: number,
-    private name: string,
-    private image: string,
-    private job: string
+    public id: number,
+    public name: string,
+    public image: string,
+    public job: string,
+    public partie: Partie,
+    public inventaire: Inventaire
   ) {}
 }

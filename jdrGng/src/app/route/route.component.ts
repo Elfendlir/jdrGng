@@ -1,4 +1,4 @@
-import {Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {RouteService} from '../services/route.service';
 
@@ -15,7 +15,7 @@ export class RouteComponent implements OnInit {
   constructor(private fb: FormBuilder, private cs: RouteService) { }
 
   @Input() scenario;
-
+  route;
   ngOnInit() {
     this.routeForm = this.fb.group({
       'scene': [ '' ,
@@ -25,19 +25,42 @@ export class RouteComponent implements OnInit {
       'listeRoutesSuivantes': []
     });
   }
-
-  maFonction(routelist) {
-      this.routeForm.value.listeRoutesSuivantes = routelist;
+  addRouteToCurrentScene(route)
+  {
+    if (this.routeForm.value.listeRoutesSuivantes === null)
+    {
+      this.routeForm.value.listeRoutesSuivantes = [route];
+    }
+    else
+    {
+      this.routeForm.value.listeRoutesSuivantes.push(route);
+    }
+    console.log('++++++++');
+    console.log(this.routeForm.value);
+    console.log('++++++++');
   }
-
   submitForm() {
     this.formSubmitted = true;
-      console.log(this.scenario.id);
-    console.log(this.routeForm);
+
     if (this.routeForm.valid ) {
+      if (this.routeForm.value.listeRoutesSuivantes === null)
+      {
+        this.routeForm.value.listeRoutesSuivantes = [];
+      }
+      console.log('---------');
+      console.log(this.routeForm.value);
+      console.log('---------');
       this.cs.add(this.routeForm.value).subscribe(
         routeFromDb => {
+          console.log('//////////');
           console.log(routeFromDb);
+          console.log('//////////');
+        },
+        () => {
+          console.log('error');
+        },
+        () => {
+          console.log('YOU WIN ?!');
         }
       );
     }
