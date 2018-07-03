@@ -15,17 +15,6 @@
       </div>
     </div>
   </div>
-  <div class="row">
-    <label for="inputImage" class="col-md-1">Avatar :</label>
-    <input type="file" (change)="onFileChanged($event)" class="form-control-file col-md-4" id="inputImage"
-           formControlName="image">
-    <div *ngIf="selectedFile" class="progress">
-      <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
-           aria-valuemin="0" aria-valuemax="100" [ngStyle]="{width:progress.percentage+'%'}">
-        {{progress.percentage}}%</div>
-    </div>
-    <button class="btn btn-success" [disabled]="!selectedFile" (click)="onUpload()">Upload</button>
-  </div>
 <button type="submit" class="btn btn-secondary">Editer un scénario</button>
 </form>
 

@@ -18,6 +18,7 @@ export class ZoneTexteComponent implements OnInit {
 
   ngOnInit() {
     //TODO récupérer la current route au lancement
+    //this.idCurrentRoute = partieEnCours.currentRoute.id;
     this.idCurrentRoute = 1;
     this.routeService.getOne(this.idCurrentRoute).subscribe(
       routeSelected => this.route = routeSelected
@@ -25,11 +26,13 @@ export class ZoneTexteComponent implements OnInit {
   }
 
   changerDeRoute() {
-    //TODO modifier la current route au click
-    this.idCurrentRoute = 2;
+    //TODO modifie la current route au click puis modifie la partie
+    this.idCurrentRoute = this.route.routeInitiale.id;
     this.routeService.getOne(this.idCurrentRoute).subscribe(
       routeSelected => this.route = routeSelected
     );
+    //this.partieEnCours.currentRoute.id = this.idCurrentRoute;
+    //this.partieService.update(this.partieEnCours).subscribe();
     //window.location.reload();
   }
 }

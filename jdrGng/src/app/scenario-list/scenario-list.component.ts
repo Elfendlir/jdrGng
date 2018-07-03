@@ -18,6 +18,9 @@ export class ScenarioListComponent implements OnInit {
   showAppRoute: Boolean = false;
   scenario;
   ngOnInit() {
+    this.scenarioService.list().subscribe(
+      listeDesScenarios => this.scenarios = listeDesScenarios
+    )
   }
 
   mafonction(scenario) {
