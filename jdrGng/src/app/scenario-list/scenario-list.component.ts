@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {ScenarioService} from '../services/scenario.service';
 import * as myGlobals from "../globals";
 
@@ -9,6 +9,10 @@ import * as myGlobals from "../globals";
 })
 export class ScenarioListComponent implements OnInit {
 
+  showAppRoute: Boolean = false;
+  scenario;
+  @Input() listScenarios;
+
   constructor(private scenarioService: ScenarioService) { }
 
   imagesPath;
@@ -16,12 +20,17 @@ export class ScenarioListComponent implements OnInit {
   showAppRoute: Boolean = false;
   scenario;
   ngOnInit() {
-    this.scenarioService.list().subscribe(
-      laRep => this.scenarios = laRep
-    );
   }
+
   mafonction(scenario) {
     this.scenario = scenario;
     this.showAppRoute = true;
+  }
+
+
+  delFonction(scenario) {
+    this.scenario = scenario;
+    console.log(this.scenario.id);
+    this.scenarioService.delete(this.scenario.id).subscribe();
   }
 }

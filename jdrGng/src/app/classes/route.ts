@@ -3,6 +3,14 @@ import {Item} from "./item";
 import {Partie} from "./partie";
 
 export class Route {
+  public id: number;
+  public scene: string;
+  public imageScene: string;
+  public routeInitiale: Route;
+  public listeRoutesSuivantes: Set<Route>;
+  public listeItemsRoute: Set<Item>;
+  public scenario: Scenario;
+  constructor() {}
 
   constructor(
     public id: number,

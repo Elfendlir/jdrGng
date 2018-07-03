@@ -1,5 +1,4 @@
-<app-scenario-list></app-scenario-list>
-<ngb-alert *ngIf="alert" [type]="alert.type" (close)="closeAlert(alert)">{{ alert.message }}</ngb-alert>
+<app-scenario-list [listScenarios]="listScenarios"></app-scenario-list>
 <div *ngIf="!userForm.valid && formSubmitted">
   <div class="utilisateur">
     <div *ngIf="userForm.controls['titre'].hasError('required')"></div>

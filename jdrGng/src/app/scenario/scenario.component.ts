@@ -12,13 +12,11 @@ import {IAlert} from "../personnage/personnage.component";
 export class ScenarioComponent implements OnInit {
   userForm: FormGroup;
   formSubmitted = false;
-  selectedFile: File;
-  fileName;
-  alert: IAlert;
-  progress: { percentage: number } = { percentage: 0 };
-  constructor(private fb: FormBuilder, private cs: ScenarioService) { }
+  listScenarios;
+  constructor(private fb: FormBuilder, private scenarioServ: ScenarioService) { }
 
   ngOnInit() {
+    this.getScenarios();
     this.userForm = this.fb.group({
       'titre': [ '' ,
         Validators.compose([Validators.required])]
@@ -27,12 +25,14 @@ export class ScenarioComponent implements OnInit {
 
   submitForm() {
     this.formSubmitted = true;
-
     if (this.userForm.valid ) {
-      this.userForm.value.image = this.fileName;
-      this.cs.add(this.userForm.value).subscribe(
+      this.scenarioServ.add(this.userForm.value).subscribe(
         userFromDb => {
           console.log(userFromDb);
+        },
+        () => {},
+        () => {
+          this.getScenarios();
         }
       );
       this.alert = {
@@ -41,5 +41,13 @@ export class ScenarioComponent implements OnInit {
         message: 'Le scénario a bien été créé !',
       };
     }
+  }
+
+  getScenarios() {
+    this.scenarioServ.list().subscribe(
+      listScen => {
+        this.listScenarios = listScen;
+      }
+    );
   }
 }
