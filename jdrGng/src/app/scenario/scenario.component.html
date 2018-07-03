@@ -4,17 +4,14 @@
     <div *ngIf="userForm.controls['titre'].hasError('required')"></div>
   </div>
 </div>
-<form [formGroup]="userForm" (ngSubmit)="submitForm()">
-  <div class="form-group" >
-    <label for="titreInput">Titre du scénario</label>
-    <input type="text" class="form-control col-4" id="titreInput" formControlName="titre">
-    <div *ngIf="userForm.controls['titre'].invalid && (userForm.controls['titre'].dirty || userForm.controls['titre'].touched)"
-         class="alert alert-danger col-md-4">
-      <div>
-        Enter valid name.
-      </div>
+<div class="container">
+  <form [formGroup]="userForm" (ngSubmit)="submitForm()">
+    <div class="form-group" >
+      <label for="titreInput">Titre du scénario</label>
+      <input type="text" class="form-control col-4" id="titreInput" formControlName="titre"  >
     </div>
-  </div>
-<button type="submit" class="btn btn-secondary">Editer un scénario</button>
-</form>
+    <button type="submit" class="btn btn-primary">Editer un scénario</button>
+  </form>
+</div>
+
 

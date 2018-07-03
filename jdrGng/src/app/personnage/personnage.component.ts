@@ -88,7 +88,7 @@ export class PersonnageComponent implements OnInit {
     );
   }
   getPersos(): void {
-    this.persoService.list().subscribe(
+    this.persoService.findFreePersonnages().subscribe(
       listPersos => this.persos = listPersos,
       () => function () {},
       () => {

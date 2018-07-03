@@ -1,4 +1,4 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RouteService} from '../services/route.service';
 import {Route} from '../classes/route';
 
@@ -11,16 +11,28 @@ export class RouteListComponent implements OnInit {
 
   constructor(private routeService: RouteService) { }
 
-  listRoutes;
   @Output() route = new EventEmitter<Route>();
-
+  @Output() changeRoute = new EventEmitter<Route>();
+  @Input() scenario;
+  @Input() listRoutes;
+  lastTarget;
   ngOnInit() {
-    this.routeService.list().subscribe(
-      laRep => this.listRoutes = laRep
-    );
+    // this.routeService.getRoutesByScenarioId(this.scenario.id).subscribe(
+    //   laRep => this.listRoutes = laRep
+    // );
   }
 
   addRoute(route) {
     this.route.emit(route);
+  }
+
+  changeCurrentRoute(event, route) {
+    event.target.className = 'blue-back';
+    if (this.lastTarget !== undefined)
+    {
+      this.lastTarget.className = '';
+    }
+    this.lastTarget = event.target;
+    this.changeRoute.emit(route);
   }
 }

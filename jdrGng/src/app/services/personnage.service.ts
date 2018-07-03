@@ -26,4 +26,7 @@ export class PersonnageService {
   update(personnage: Personnage): Observable<any> {
     return this.http.put(this.baseUrl, personnage);
   }
+  findFreePersonnages(): Observable<any> {
+    return this.http.get(this.baseUrl + 'free');
+  }
 }
